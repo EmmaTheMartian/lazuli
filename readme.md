@@ -96,3 +96,6 @@ dependencies {
 - [ ] Fabric port???
   - This will be difficult since I have a plethora of NeoForge-specific helpers (fluid, energy, inventories, etc.).
     I'd basically be recreating Arch API.
+- [ ] Multiversion
+  - I primarily mod on 1.21.1, however I plan to update to the next "LTS" modding version when available.
+    I have a feeling that the LTS version will be either 1.21.6 or 1.22. Both seem pretty likely.
