@@ -75,13 +75,13 @@ repositories {
 }
 
 dependencies {
-  // Loom and Architectury Loom
-  modImplementation("maven.modrinth:lazuli:VERSION")
-  // NeoGradle
-  implementation(fg.deobf("maven.modrinth:lazuli:VERSION"))
-  // ModDevGradle
-  implementation("maven.modrinth:lazuli:VERSION") // I think?
-  // TODO: Add Unimined and whatever other Gradle plugins are out there in the wild.
+	// Loom and Architectury Loom
+	modImplementation("maven.modrinth:lazuli:VERSION")
+	// NeoGradle
+	implementation(fg.deobf("maven.modrinth:lazuli:VERSION"))
+	// ModDevGradle
+	implementation("maven.modrinth:lazuli:VERSION") // I think?
+	// TODO: Add Unimined and whatever other Gradle plugins are out there in the wild.
 }
 ```
 
