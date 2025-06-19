@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+issueTrackerURL="https://github.com/emmathemartian/lazuli/issues"
+
+[[mods]]
+modId = "${mod_id}_test"
+version = "${mod_version}"
+displayName = "${mod_name} Test Mod"
+# A URL to query for updates for this mod. See the JSON update specification https://docs.neoforge.net/docs/misc/updatechecker/
+#updateJSONURL="https://change.me.example.invalid/updates.json"
+displayURL="https://github.com/emmathemartian/lazuli"
+#logoFile="lazuli.png"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+
+#[[mixins]]
+#config = "${mod_id}.mixins.json"
+
+[[dependencies."${mod_id}_test"]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neo_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
