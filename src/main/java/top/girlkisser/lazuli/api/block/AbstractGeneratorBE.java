@@ -10,6 +10,13 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public abstract class AbstractGeneratorBE extends AbstractEnergyBE implements ITickableBE
 {
+	/**
+	 * An {@link AbstractEnergyBE} that distributes power every tick and cannot receive power.
+	 *
+	 * @param type The block entity's type.
+	 * @param pos The block entity's position.
+	 * @param blockState The block entity's block state.
+	 */
 	public AbstractGeneratorBE(BlockEntityType<?> type, BlockPos pos, BlockState blockState)
 	{
 		super(type, pos, blockState);

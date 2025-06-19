@@ -107,7 +107,9 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	}
 
 	/**
-	 * @return `true` if the inventory is full. This does NOT account for stack sizes.
+	 * Gets whether the inventory has no empty slots.
+	 *
+	 * @return Whether the inventory has no empty slots or not.
 	 */
 	default boolean isInventoryFull()
 	{
@@ -239,7 +241,9 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	}
 
 	/**
-	 * @return Whether the inventory should eject any items inside.
+	 * Whether the inventory should eject any items inside its inventory.
+	 *
+	 * @return Whether the inventory should eject any items inside its inventory.
 	 */
 	default boolean shouldEjectItems()
 	{

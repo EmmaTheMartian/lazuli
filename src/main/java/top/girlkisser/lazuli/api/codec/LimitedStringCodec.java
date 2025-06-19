@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 
 /**
  * A string codec that only allows specified values.
+ *
+ * @param values The valid values.
  */
 public record LimitedStringCodec(Set<String> values) implements Codec<String>
 {
@@ -50,6 +52,7 @@ public record LimitedStringCodec(Set<String> values) implements Codec<String>
 	 *
 	 * @param values The enum's values.
 	 * @param valueOf The enum's {@code valueOf} function.
+	 * @param <T> The enum's type.
 	 * @return The codec.
 	 */
 	public static <T extends Enum<T>> Codec<T> enumStringCodec(T[] values, Function<String, T> valueOf)

@@ -10,22 +10,28 @@ import top.girlkisser.lazuli.Lazuli;
 
 import java.util.function.UnaryOperator;
 
-@SuppressWarnings("unused")
-@ApiStatus.NonExtendable
-public interface LazuliDataComponents
+/**
+ * Common data components that can be used by mods depending on Lazuli.
+ */
+public final class LazuliDataComponents
 {
-	DeferredRegister.DataComponents R = DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, Lazuli.MODID);
-
-	static <T> DeferredHolder<DataComponentType<?>, DataComponentType<T>> reg(String id, UnaryOperator<DataComponentType.Builder<T>> builder)
+	private LazuliDataComponents()
 	{
-		return R.registerComponentType(id, builder);
 	}
+
+	/**
+	 * JavaDoc is holding me hostage...
+	 * <br/>
+	 * I wonder if there's a way to make JavaDoc ignore fields with {@code @ApiStatus.Internal}...
+	 */
+	@ApiStatus.Internal
+	public static final DeferredRegister.DataComponents R = DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, Lazuli.MODID);
 
 	/**
 	 * A data component to contain any fluid stack.
 	 */
-	DeferredHolder<DataComponentType<?>, DataComponentType<SimpleFluidContent>> GENERIC_FLUID = reg("fluid",
-		b -> b
+	public static final DeferredHolder<DataComponentType<?>, DataComponentType<SimpleFluidContent>> GENERIC_FLUID =
+		R.registerComponentType("fluid", b -> b
 			.persistent(SimpleFluidContent.CODEC)
 			.networkSynchronized(SimpleFluidContent.STREAM_CODEC));
 }

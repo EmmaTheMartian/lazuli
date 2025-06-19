@@ -59,16 +59,31 @@ public interface IZonedBE extends IBE
 		return AABB.encapsulatingFullBlocks(start, end);
 	}
 
+	/**
+	 * Get the work zone {@link AABB}'s range in blocks.
+	 *
+	 * @return The range.
+	 */
 	default int getWorkZoneRange()
 	{
 		return 1;
 	}
 
+	/**
+	 * Get the work zone {@link AABB}'s height in blocks.
+	 *
+	 * @return The height.
+	 */
 	default int getWorkZoneHeight()
 	{
 		return 1;
 	}
 
+	/**
+	 * Get the cached work zone for the block entity.
+	 *
+	 * @return The AABB.
+	 */
 	Lazy<AABB> getCachedWorkZone();
 
 	/**
@@ -110,12 +125,27 @@ public interface IZonedBE extends IBE
 		return found;
 	}
 
+	/** Returns `true` when the entity is a {@link Player}. */
 	Predicate<Entity> IS_PLAYER = e -> e instanceof Player;
+
+	/** Returns `true` when the entity is **NOT** a {@link Player}. */
 	Predicate<Entity> NOT_PLAYER = Predicate.not(IS_PLAYER);
+
+	/** Returns `true` when the entity is an {@link ItemEntity}. */
 	Predicate<Entity> IS_ITEM = e -> e instanceof ItemEntity;
+
+	/** Returns `true` when the entity is **NOT** {@link Player}. */
 	Predicate<Entity> NOT_ITEM = Predicate.not(IS_ITEM);
+
+	/** Returns `true` when the entity is a baby. */
 	Predicate<LivingEntity> IS_BABY = LivingEntity::isBaby;
+
+	/** Returns `true` when the entity is **NOT** a baby. */
 	Predicate<LivingEntity> NOT_BABY = Predicate.not(IS_BABY);
+
+	/** Returns `true` when the entity is an animal and is an adult. */
 	Predicate<LivingEntity> IS_ADULT_ANIMAL = NOT_BABY.and(NOT_PLAYER).and(NOT_ITEM);
+
+	/** Returns `true` when the entity is an animal and is a baby. */
 	Predicate<LivingEntity> IS_BABY_ANIMAL = IS_BABY.and(NOT_PLAYER).and(NOT_ITEM);
 }

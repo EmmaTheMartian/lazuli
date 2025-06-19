@@ -13,13 +13,42 @@ import org.joml.Vector3f;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-// https://github.com/Tutorials-By-Kaupenjoe/NeoForge-Course-121-Module-5/blob/2c56e563d3411f9b585c1f3208653196a977087f/src/main/java/net/kaupenjoe/mccourse/fluid/BaseFluidType.java
+/**
+ * A basic {@link FluidType} implementation.
+ * <br/>
+ * Based on <a href="https://github.com/Tutorials-By-Kaupenjoe/NeoForge-Course-121-Module-5/blob/2c56e563d3411f9b585c1f3208653196a977087f/src/main/java/net/kaupenjoe/mccourse/fluid/BaseFluidType.java">Kaupenjoe's BaseFluidType</a>.
+ */
 public class BasicFluidType extends FluidType
 {
-	public final ResourceLocation stillTexture, flowingTexture, overlayTexture;
+	/** The texture to use for the fluid's still texture. */
+	public final ResourceLocation stillTexture;
+	/** The texture to use for the fluid's flowing texture. */
+	public final ResourceLocation flowingTexture;
+	/** The texture to use for the fluid's overlay texture. */
+	public final ResourceLocation overlayTexture;
+	/**
+	 * The fluid type's tint colour as a packed integer.
+	 * <br/>
+	 * TODO: Convert this to an UnpackedColour
+	 */
 	public final int tintColour;
+	/**
+	 * The fluid type's fog colour as a {@link Vector3f}.
+	 * <br/>
+	 * TODO: Convert this to an UnpackedColour
+	 */
 	public final Vector3f fogColour;
 
+	/**
+	 * A basic {@link FluidType} implementation.
+	 *
+	 * @param stillTexture The fluid's still texture.
+	 * @param flowingTexture The fluid's flowing texture.
+	 * @param overlayTexture The fluid's overlay texture.
+	 * @param tintColour The tint to apply to the textures.
+	 * @param fogColour The fog colour when swimming in the fluid.
+	 * @param properties The fluid's properties.
+	 */
 	public BasicFluidType(ResourceLocation stillTexture, ResourceLocation flowingTexture, ResourceLocation overlayTexture, int tintColour, Vector3f fogColour, Properties properties)
 	{
 		super(properties);
@@ -30,6 +59,12 @@ public class BasicFluidType extends FluidType
 		this.fogColour = fogColour;
 	}
 
+	/**
+	 * Get {@link IClientFluidTypeExtensions} for the fluid.
+	 *
+	 * @param fluidType The fluid type.
+	 * @return The client extensions.
+	 */
 	public static IClientFluidTypeExtensions getClientExtensionsFor(BasicFluidType fluidType)
 	{
 		return new IClientFluidTypeExtensions()

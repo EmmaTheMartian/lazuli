@@ -15,9 +15,19 @@ import org.jetbrains.annotations.NotNull;
  */
 public class AbstractSingleTankBE extends BlockEntity implements ISingleTankBE
 {
+	/** The block entity's fluid tank. */
 	protected final FluidTank tank;
+	/** The tank's capacity in mB. */
 	protected final int capacity;
 
+	/**
+	 * A block entity with a single tank.
+	 *
+	 * @param type The block entity's type.
+	 * @param capacity The tank's capacity in mB.
+	 * @param pos The block entity's position.
+	 * @param blockState The block entity's block state.
+	 */
 	public AbstractSingleTankBE(BlockEntityType<?> type, int capacity, BlockPos pos, BlockState blockState)
 	{
 		super(type, pos, blockState);
@@ -30,7 +40,7 @@ public class AbstractSingleTankBE extends BlockEntity implements ISingleTankBE
 	 * is overridden, this method may do nothing.
 	 *
 	 * @param stack The stack to validate.
-	 * @return Whether or not the stack is valid for this tank.
+	 * @return Whether the stack is valid for this tank.
 	 */
 	protected boolean validate(FluidStack stack)
 	{

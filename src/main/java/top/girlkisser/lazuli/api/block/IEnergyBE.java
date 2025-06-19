@@ -15,10 +15,17 @@ public interface IEnergyBE extends IBE
 	 */
 	int DEFAULT_MAX_ENERGY = 1600;
 
+	/**
+	 * Gets the energy storage for this block entity.
+	 *
+	 * @return The energy storage.
+	 */
 	ProtectiveEnergyStorage getEnergyStorage();
 
 	/**
-	 * Energy capacity of the machine
+	 * Gets the energy capacity of the machine
+	 *
+	 * @return The capacity.
 	 */
 	default int getMaxEnergy()
 	{
@@ -26,7 +33,9 @@ public interface IEnergyBE extends IBE
 	}
 
 	/**
-	 * Maximum energy extractable per tick for the BE.
+	 * Gets the maximum energy extractable per tick for the BE.
+	 *
+	 * @return The max energy extractable per tick.
 	 */
 	default int getMaxEnergyExtract()
 	{
@@ -34,7 +43,9 @@ public interface IEnergyBE extends IBE
 	}
 
 	/**
-	 * Maximum energy receivable per tick for the BE.
+	 * Gets the maximum energy receivable per tick for the BE.
+	 *
+	 * @return The max energy receivable per tick.
 	 */
 	default int getMaxEnergyReceive()
 	{
@@ -42,7 +53,9 @@ public interface IEnergyBE extends IBE
 	}
 
 	/**
-	 * @return The amount of energy stored in the block entity.
+	 * Gets the amount of energy stored in the block entity.
+	 *
+	 * @return The amount.
 	 */
 	default int getEnergyStored()
 	{

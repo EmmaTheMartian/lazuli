@@ -7,6 +7,13 @@ import net.minecraft.util.Mth;
  */
 public class ProtectiveEnergyStorage extends LazuliEnergyStorage
 {
+	/**
+	 * An energy storage implementation that provides forceful receive/extract methods.
+	 *
+	 * @param capacity The capacity in RF/FE.
+	 * @param maxReceive The maximum amount of energy receivable per tick.
+	 * @param maxExtract The maximum amount of energy extractable per tick.
+	 */
 	public ProtectiveEnergyStorage(int capacity, int maxReceive, int maxExtract)
 	{
 		super(capacity, maxReceive, maxExtract);

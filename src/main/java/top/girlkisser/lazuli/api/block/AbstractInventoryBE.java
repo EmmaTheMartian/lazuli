@@ -14,7 +14,14 @@ import org.jetbrains.annotations.NotNull;
  */
 public abstract class AbstractInventoryBE extends BlockEntity implements IInventoryBE<ItemStackHandler>
 {
+	/**
+	 * The block entity's inventory.
+	 */
 	protected final ItemStackHandler inventory;
+
+	/**
+	 * The amount of slots that the inventory has.
+	 */
 	protected final int slots;
 
 	/**
@@ -33,6 +40,7 @@ public abstract class AbstractInventoryBE extends BlockEntity implements IInvent
 
 	/**
 	 * Instantiates an inventory for the block entity.
+	 *
 	 * @return Any ItemStackHandler for the inventory.
 	 */
 	protected ItemStackHandler makeItemStackHandler()

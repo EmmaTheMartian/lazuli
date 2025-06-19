@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.Block;
 /**
  * A record for recipes that output blocks.
  *
- * @param block
+ * @param block The output block.
  */
 public record BlockOutput(Block block)
 {
@@ -31,7 +31,7 @@ public record BlockOutput(Block block)
 	 * <br/>
 	 * Stands for "Block Output from Resource Location"
 	 *
-	 * @param block
+	 * @param block The output block's ID.
 	 */
 	public record BORL(ResourceLocation block)
 	{

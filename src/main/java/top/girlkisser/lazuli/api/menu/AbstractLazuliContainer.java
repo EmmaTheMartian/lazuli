@@ -7,20 +7,34 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * A basic implementation for {@link AbstractContainerMenu} providing
  * {@code quickMoveStack} and some helper functions.
  * <br/>
- * Based on https://www.mcjty.eu/docs/1.20.4_neo/ep3#container
+ * Based on <a href="https://www.mcjty.eu/docs/1.20.4_neo/ep3#container">McJty's container guide</a>.
  */
 public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 {
+	/**
+	 * The amount of slots in the container.
+	 */
 	protected final int slotCount;
+
+	/**
+	 * The player's inventory.
+	 */
 	protected Inventory playerInventory;
 
-	protected AbstractLazuliContainer(@Nullable MenuType<?> menuType, int slotCount, int containerId, Inventory playerInventory)
+	/**
+	 * A basic implementation for {@link AbstractContainerMenu}.
+	 *
+	 * @param menuType The menu type.
+	 * @param slotCount The amount of slots in the menu.
+	 * @param containerId The container ID.
+	 * @param playerInventory The player's inventory.
+	 */
+	protected AbstractLazuliContainer(MenuType<?> menuType, int slotCount, int containerId, Inventory playerInventory)
 	{
 		super(menuType, containerId);
 		this.slotCount = slotCount;
@@ -106,6 +120,7 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	 * @param horizontalCount How many slots to create on the horizontal axis.
 	 * @param verticalCount How many slots to create on the vertical axis.
 	 * @param dx The width/gap of each slot, usually 18.
+	 * @param dy The height/gap of each slot, usually 18.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addSlotBox(Container container, int index, int x, int y, int horizontalCount, int verticalCount, int dx, int dy)
@@ -123,6 +138,7 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	 * @param horizontalCount How many slots to create on the horizontal axis.
 	 * @param verticalCount How many slots to create on the vertical axis.
 	 * @param dx The width/gap of each slot, usually 18.
+	 * @param dy The height/gap of each slot, usually 18.
 	 * @param factory The slot factory to use.
 	 * @return The slot index of the last slot + 1.
 	 */
@@ -168,6 +184,7 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	 * @param horizontalCount How many slots to create on the horizontal axis.
 	 * @param verticalCount How many slots to create on the vertical axis.
 	 * @param dx The width/gap of each slot, usually 18.
+	 * @param dy The height/gap of each slot, usually 18.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addOutputSlotBox(Container container, int index, int x, int y, int horizontalCount, int verticalCount, int dx, int dy)
@@ -195,14 +212,31 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 		addSlotRange(playerInventory, 0, x, y + 58, 9, 18);
 	}
 
+	/**
+	 * Get the player's inventory.
+	 *
+	 * @return The player's inventory.
+	 */
 	public Inventory getPlayerInventory()
 	{
 		return playerInventory;
 	}
 
+	/**
+	 * A factory to create {@link Slot}s from.
+	 */
 	@FunctionalInterface
 	public interface SlotFactory
 	{
+		/**
+		 * Creates a slot using the provided coordinates, index, and container.
+		 *
+		 * @param container The container.
+		 * @param slot The index that this slot is for.
+		 * @param x The X coordinate.
+		 * @param y The Y coordinate.
+		 * @return A {@link Slot} or child.
+		 */
 		Slot makeSlot(Container container, int slot, int x, int y);
 	}
 }

@@ -15,18 +15,32 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class RoundRobinInventory extends ItemStackHandler
 {
+	/** The next index to insert an item into. */
 	protected int index = 0; //TODO: serialize this for consistency
 
+	/**
+	 * Creates a round-robin inventory with a size of 1.
+	 */
 	public RoundRobinInventory()
 	{
 		super();
 	}
 
+	/**
+	 * Creates a round-robin inventory with the given size.
+	 *
+	 * @param size The size.
+	 */
 	public RoundRobinInventory(int size)
 	{
 		super(size);
 	}
 
+	/**
+	 * Creates a round-robin inventory with the given stacks.
+	 *
+	 * @param stacks The stacks.
+	 */
 	public RoundRobinInventory(NonNullList<ItemStack> stacks)
 	{
 		super(stacks);
@@ -50,6 +64,13 @@ public class RoundRobinInventory extends ItemStackHandler
 		return result;
 	}
 
+	/**
+	 * Inserts an item into the inventory.
+	 *
+	 * @param stack The stack to insert.
+	 * @param simulate If this action should be simulated or not.
+	 * @return The remainder item stack, if any.
+	 */
 	public ItemStack insertItem(ItemStack stack, boolean simulate)
 	{
 		return insertItem(0, stack, simulate);

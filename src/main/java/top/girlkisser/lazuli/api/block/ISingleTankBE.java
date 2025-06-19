@@ -2,12 +2,22 @@ package top.girlkisser.lazuli.api.block;
 
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 
+/**
+ * A basic interface for block entities with a single tank.
+ */
 public interface ISingleTankBE extends IFluidBE
 {
+	/**
+	 * Get the block entity's tank.
+	 *
+	 * @return The tank.
+	 */
 	FluidTank getTank();
 
 	/**
-	 * @return The tank capacity for the block entity.
+	 * Gets the tank capacity for the block entity.
+	 *
+	 * @return The capacity.
 	 */
 	default int getTankCapacity()
 	{
@@ -15,7 +25,9 @@ public interface ISingleTankBE extends IFluidBE
 	}
 
 	/**
-	 * @return The maximum fluid extractable per tick for the block entity.
+	 * Gets the maximum fluid extractable per tick for the block entity.
+	 *
+	 * @return The amount.
 	 */
 	default int getMaxFluidExtract()
 	{
@@ -23,7 +35,9 @@ public interface ISingleTankBE extends IFluidBE
 	}
 
 	/**
-	 * @return The maximum fluid receivable per tick for the block entity.
+	 * Gets the maximum fluid receivable per tick for the block entity.
+	 *
+	 * @return The amount.
 	 */
 	default int getMaxFluidReceive()
 	{

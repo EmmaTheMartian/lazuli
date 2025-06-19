@@ -1,3 +1,6 @@
+/**
+ * Provides helpers for container (menu) GUIs.
+ */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 package top.girlkisser.lazuli.api.menu;

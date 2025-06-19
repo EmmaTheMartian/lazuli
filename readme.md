@@ -60,7 +60,29 @@ your license saying something like "Lazuli License" and copy+paste
 To add Lazuli to your project, just add it as a `modImplementation` in Gradle:
 
 ```kts
+// Applies to all Gradle plugins
+repositories {
+	// Modrinth maven is the easiest and most reliable place for me to publish at the moment.
+	// I publish sources and JavaDocs here too.
+	exclusiveContent {
+		forRepository {
+			maven("https://api.modrinth.com/maven")
+		}
+		filter {
+			includeGroup("maven.modrinth")
+		}
+	}
+}
 
+dependencies {
+  // Loom and Architectury Loom
+  modImplementation("maven.modrinth:lazuli:VERSION")
+  // NeoGradle
+  implementation(fg.deobf("maven.modrinth:lazuli:VERSION"))
+  // ModDevGradle
+  implementation("maven.modrinth:lazuli:VERSION") // I think?
+  // TODO: Add Unimined and whatever other Gradle plugins are out there in the wild.
+}
 ```
 
 ## Todo
@@ -71,3 +93,6 @@ To add Lazuli to your project, just add it as a `modImplementation` in Gradle:
   - Perhaps a recipe abstraction which also handles EMI/JEI/REI integration?
   - If I ever get into developing addon mods for Create/Botania/Ars Nouveau/other major mods, integration helpers could be useful.
   - Helpers/wrappers for KubeJS+CraftTweaker
+- [ ] Fabric port???
+  - This will be difficult since I have a plethora of NeoForge-specific helpers (fluid, energy, inventories, etc.).
+    I'd basically be recreating Arch API.

@@ -16,13 +16,23 @@ import top.girlkisser.lazuli.api.menu.AbstractLazuliContainer;
  */
 public abstract class AbstractLazuliContainerScreen<T extends AbstractLazuliContainer> extends AbstractContainerScreen<T>
 {
+	/**
+	 * A basic implementation for {@link net.minecraft.client.gui.screens.Screen}s
+	 * with {@link AbstractLazuliContainer} menus.
+	 *
+	 * @param menu The menu.
+	 * @param playerInventory The player's inventory.
+	 * @param title The screen's title.
+	 */
 	protected AbstractLazuliContainerScreen(T menu, Inventory playerInventory, Component title)
 	{
 		super(menu, playerInventory, title);
 	}
 
 	/**
-	 * @return The texture to use for the screen's background.
+	 * Gets the texture to use for the screen's background.
+	 *
+	 * @return The texture.
 	 */
 	protected abstract ResourceLocation getUI();
 

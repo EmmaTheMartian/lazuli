@@ -27,6 +27,9 @@ import java.util.List;
  */
 public final class FakePlayerHelpers
 {
+	/**
+	 * A fake player to use.
+	 */
 	public static final ArgLazy<FakePlayer, ServerLevel> FAKE_PLAYER = new ArgLazy<>(FakePlayerFactory::getMinecraft);
 
 	private FakePlayerHelpers()

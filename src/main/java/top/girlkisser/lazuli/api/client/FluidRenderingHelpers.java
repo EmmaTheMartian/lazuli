@@ -16,6 +16,9 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
+/**
+ * Provides helpers for rendering fluids, primarily on GUIs.
+ */
 public final class FluidRenderingHelpers
 {
 	private FluidRenderingHelpers()

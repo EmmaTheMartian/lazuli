@@ -18,11 +18,23 @@ public abstract class AbstractEnergyBE extends BlockEntity implements IEnergyBE
 {
 	private final ProtectiveEnergyStorage energyStorage = makeEnergyStorage();
 
+	/**
+	 * A block entity with an energy storage.
+	 *
+	 * @param type The block entity's type.
+	 * @param pos The block entity's position.
+	 * @param blockState The block entity's block state.
+	 */
 	public AbstractEnergyBE(BlockEntityType<?> type, BlockPos pos, BlockState blockState)
 	{
 		super(type, pos, blockState);
 	}
 
+	/**
+	 * Creates the block entity's energy storage.
+	 *
+	 * @return The energy storage.
+	 */
 	protected ProtectiveEnergyStorage makeEnergyStorage()
 	{
 		return new ProtectiveEnergyStorage(getMaxEnergy(), getMaxEnergyReceive(), getMaxEnergyExtract());

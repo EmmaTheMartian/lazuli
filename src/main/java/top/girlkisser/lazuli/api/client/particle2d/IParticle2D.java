@@ -11,22 +11,30 @@ import org.joml.Vector2i;
 public interface IParticle2D
 {
 	/**
-	 * @return The texture to render the particle with.
+	 * The texture to render the particle with.
+	 *
+	 * @return The texture.
 	 */
 	ResourceLocation texture();
 
 	/**
-	 * @return Where to render the particle at.
+	 * Gets the position to render the particle at.
+	 *
+	 * @return The position.
 	 */
 	Vector2f position();
 
 	/**
-	 * @return The size to render the particle at.
+	 * Gets the size to render the particle at.
+	 *
+	 * @return The size.
 	 */
 	Vector2i size();
 
 	/**
-	 * @return The total lifetime of this particle in ticks.
+	 * Gets the total lifetime of this particle in ticks.
+	 *
+	 * @return The lifetime.
 	 */
 	int lifetime();
 

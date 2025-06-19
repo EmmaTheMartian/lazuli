@@ -17,15 +17,22 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * A block class which provides helpers for block entities and tickers.
+ *
  * @param <T> The block entity's type
  */
 @ParametersAreNonnullByDefault
 public abstract class AbstractBlockWithEntity<T extends BlockEntity> extends Block implements EntityBlock
 {
 	private final BlockEntityType.BlockEntitySupplier<T> blockEntityFactory;
+
+	/**
+	 * Whether this block entity has tickers on either the server or the client.
+	 */
 	protected boolean hasTicker = true;
 
 	/**
+	 * A block class which provides helpers for block entities and tickers.
+	 *
 	 * @param blockEntityFactory Factory to create the block entity.
 	 * @param properties Block properties.
 	 */

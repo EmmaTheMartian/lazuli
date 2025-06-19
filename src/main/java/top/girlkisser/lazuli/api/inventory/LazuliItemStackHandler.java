@@ -9,16 +9,29 @@ import net.neoforged.neoforge.items.ItemStackHandler;
  */
 public class LazuliItemStackHandler extends ItemStackHandler implements ISerializableItemHandler
 {
+	/**
+	 * Creates a LazuliItemStackHandler with a size of 1.
+	 */
 	public LazuliItemStackHandler()
 	{
 		this(1);
 	}
 
+	/**
+	 * Creates a LazuliItemStackHandler with the given size.
+	 *
+	 * @param size The size.
+	 */
 	public LazuliItemStackHandler(int size)
 	{
 		this.stacks = NonNullList.withSize(size, ItemStack.EMPTY);
 	}
 
+	/**
+	 * Creates a LazuliItemStackHandler with the given stacks.
+	 *
+	 * @param stacks The stacks.
+	 */
 	public LazuliItemStackHandler(NonNullList<ItemStack> stacks)
 	{
 		this.stacks = stacks;

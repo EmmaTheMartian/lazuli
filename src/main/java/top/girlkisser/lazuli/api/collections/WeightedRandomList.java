@@ -15,9 +15,16 @@ import java.util.List;
  */
 public class WeightedRandomList<T extends WeightedRandomList.IWeighted>
 {
+	/** The list's entries. */
 	protected final List<Entry<T>> entries;
+	/** The total weight of all entries in the list. */
 	protected int accumulatedWeight;
 
+	/**
+	 * Create a weighted random list using the given values.
+	 *
+	 * @param entries The values.
+	 */
 	public WeightedRandomList(List<T> entries)
 	{
 		this.entries = new ArrayList<>();
@@ -25,6 +32,13 @@ public class WeightedRandomList<T extends WeightedRandomList.IWeighted>
 			this.addEntry(element);
 	}
 
+	/**
+	 * Get the list's entries. **Do not remove values from this list**, if you absolutely
+	 * must, make sure to change the accumulated weight of all entries after the removed
+	 * entry *and* of the list.
+	 *
+	 * @return The entries.
+	 */
 	public List<Entry<T>> getEntries()
 	{
 		return entries;
@@ -60,12 +74,27 @@ public class WeightedRandomList<T extends WeightedRandomList.IWeighted>
 		entries.add(new Entry<>(it, accumulatedWeight));
 	}
 
+	/**
+	 * An entry in the list.
+	 *
+	 * @param it The entry's value.
+	 * @param accumulatedWeight The accumulated weight of the value.
+	 * @param <T> The entry's type.
+	 */
 	public record Entry<T>(T it, int accumulatedWeight)
 	{
 	}
 
+	/**
+	 * An interface for a weighted value.
+	 */
 	public interface IWeighted
 	{
+		/**
+		 * Gets the weight of this value.
+		 *
+		 * @return The weight.
+		 */
 		int weight();
 	}
 }

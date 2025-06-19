@@ -8,6 +8,9 @@ import net.minecraft.network.codec.StreamCodec;
 import org.jetbrains.annotations.ApiStatus;
 import org.joml.Vector2f;
 
+/**
+ * Extra codecs for random things.
+ */
 @ApiStatus.NonExtendable
 public interface LazuliExtraCodecs
 {
@@ -23,5 +26,6 @@ public interface LazuliExtraCodecs
 		Codec.FLOAT.fieldOf("y").forGetter(Vector2f::y)
 	).apply(it, Vector2f::new));
 
+	/** Stream codec for {@link #VECTOR2F}. */
 	StreamCodec<ByteBuf, Vector2f> VECTOR2F_STREAM_CODEC = ByteBufCodecs.fromCodec(VECTOR2F);
 }

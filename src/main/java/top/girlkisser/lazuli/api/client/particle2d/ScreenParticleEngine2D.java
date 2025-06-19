@@ -12,15 +12,24 @@ import java.util.Queue;
  */
 public class ScreenParticleEngine2D implements IParticleEngine2D
 {
+	/** A default instance to use. */
 	public static final ScreenParticleEngine2D INSTANCE = new ScreenParticleEngine2D();
 
-	/**
-	 * The maximum number of particles allowed at any given time.
-	 */
+	/** The maximum number of particles allowed at any given time. */
 	public static final int MAX_PARTICLES = Short.MAX_VALUE;
 
+	/** The current list of particles. */
 	protected List<InstancedParticle2D> particles = new ArrayList<>();
+
+	/** A queue of particles to add on the next frame. */
 	protected Queue<IParticle2D> particleQueue = new ArrayDeque<>();
+
+	/**
+	 * A particle engine for {@link net.minecraft.client.gui.screens.Screen}s.
+	 */
+	public ScreenParticleEngine2D()
+	{
+	}
 
 	@Override
 	public void addParticle(IParticle2D particle)

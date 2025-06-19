@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * A palette of {@link UnpackedColour}s.
  *
- * @param colours
+ * @param colours The palette's colours.
  */
 public record ColourPalette(UnpackedColour... colours)
 {
@@ -48,11 +48,22 @@ public record ColourPalette(UnpackedColour... colours)
 		}
 	);
 
+	/**
+	 * A palette of {@link UnpackedColour}s.
+	 *
+	 * @param colours The palette's colours.
+	 */
 	public ColourPalette(List<UnpackedColour> colours)
 	{
 		this(colours.toArray(new UnpackedColour[]{}));
 	}
 
+	/**
+	 * Gets a random colour from the palette.
+	 *
+	 * @param random The random source to use.
+	 * @return A random unpacked colour.
+	 */
 	public UnpackedColour getRandom(RandomSource random)
 	{
 		return colours[random.nextInt(colours.length)];

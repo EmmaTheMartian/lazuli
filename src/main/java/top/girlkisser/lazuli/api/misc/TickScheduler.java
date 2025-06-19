@@ -11,16 +11,35 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Allows you to schedule one-shot events that occur in some amount of ticks.
+ * <br/>
+ * Generally you should not need to make a custom one, using either {@link #SERVER}
+ * or {@link #CLIENT} should be sufficient.
  */
 public class TickScheduler
 {
+	/** A tick scheduler for the server. */
 	public static final TickScheduler SERVER = new TickScheduler();
 
+	/** A tick scheduler for the client. */
 	@OnlyIn(Dist.CLIENT)
 	public static final TickScheduler CLIENT = new TickScheduler();
 
 	private final List<Pair<AtomicInteger, Runnable>> scheduled = new ArrayList<>();
 
+	/**
+	 * Allows you to schedule one-shot events that occur in some amount of ticks.
+	 * <br/>
+	 * Generally you should not need to make a custom one, using either {@link #SERVER}
+	 * or {@link #CLIENT} should be sufficient.
+	 */
+	public TickScheduler()
+	{
+	}
+
+	/**
+	 * Ticks the scheduler. The {@link #SERVER} and {@link #CLIENT} schedulers are ticked
+	 * automatically by Lazuli.
+	 */
 	@ApiStatus.Internal
 	public void tick()
 	{

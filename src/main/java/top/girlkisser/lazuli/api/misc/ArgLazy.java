@@ -15,11 +15,22 @@ public class ArgLazy<ItT, ArgT>
 	private @Nullable ItT it;
 	private final Function<ArgT, ItT> function;
 
+	/**
+	 * A clone of {@link net.neoforged.neoforge.common.util.Lazy} with arguments.
+	 *
+	 * @param function The function to provide the lazy's value.
+	 */
 	public ArgLazy(Function<ArgT, ItT> function)
 	{
 		this.function = function;
 	}
 
+	/**
+	 * Get or generate the lazy's value.
+	 *
+	 * @param arg The argument to give the function.
+	 * @return The lazy's value.
+	 */
 	public ItT get(ArgT arg)
 	{
 		if (it == null)
@@ -27,6 +38,11 @@ public class ArgLazy<ItT, ArgT>
 		return it;
 	}
 
+	/**
+	 * Gets whether the lazy's value has been generated or not.
+	 *
+	 * @return `true` if the value has been generated.
+	 */
 	public boolean isPresent()
 	{
 		return it != null;

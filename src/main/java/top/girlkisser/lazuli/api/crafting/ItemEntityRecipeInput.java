@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * A recipe input for a {@link NonNullList<ItemEntity>}.
  *
- * @param entities
+ * @param entities The input item entities.
  */
 public record ItemEntityRecipeInput(NonNullList<ItemEntity> entities) implements Container, RecipeInput
 {

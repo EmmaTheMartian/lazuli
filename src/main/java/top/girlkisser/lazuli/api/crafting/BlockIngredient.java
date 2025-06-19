@@ -21,16 +21,26 @@ import java.util.Optional;
 /**
  * An ingredient record for blocks or block tags.
  *
- * @param block
- * @param tag
+ * @param block The ingredient block, if any.
+ * @param tag The ingredient tag, if any.
  */
 public record BlockIngredient(Optional<Block> block, Optional<TagKey<Block>> tag)
 {
+	/**
+	 * An ingredient record for blocks or block tags.
+	 *
+	 * @param block The ingredient block.
+	 */
 	public BlockIngredient(Block block)
 	{
 		this(Optional.of(block), Optional.empty());
 	}
 
+	/**
+	 * An ingredient record for blocks or block tags.
+	 *
+	 * @param blockTag The ingredient block tag.
+	 */
 	public BlockIngredient(TagKey<Block> blockTag)
 	{
 		this(Optional.empty(), Optional.of(blockTag));
@@ -88,8 +98,8 @@ public record BlockIngredient(Optional<Block> block, Optional<TagKey<Block>> tag
 	 * <br/>
 	 * Name stands for "Block Ingredient from Resource Location"
 	 *
-	 * @param block
-	 * @param tag
+	 * @param block The block's identifier, if any.
+	 * @param tag The tag's identifier, if any.
 	 */
 	public record BIRL(Optional<ResourceLocation> block, Optional<ResourceLocation> tag)
 	{

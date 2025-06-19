@@ -18,6 +18,8 @@ public interface LazuliItem
 	// Fluid Helpers //
 
 	/**
+	 * Get whether the item has a fluid tank.
+	 *
 	 * @return `true` if this item has a fluid tank.
 	 */
 	default boolean hasFluidTank()
@@ -26,7 +28,9 @@ public interface LazuliItem
 	}
 
 	/**
-	 * @return The default mB that this item's tank can hold.
+	 * Get the default mB that this item's tank can hold.
+	 *
+	 * @return The amount of mB.
 	 */
 	default int getDefaultFluidHandlerCapacity()
 	{

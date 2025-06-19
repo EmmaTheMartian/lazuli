@@ -32,29 +32,61 @@ import java.util.Collection;
 @MethodsReturnNonnullByDefault
 public class GhostStackHandler implements IItemHandler, IItemHandlerModifiable, INBTSerializable<CompoundTag>
 {
+	/** A codec for a {@link NonNullList<GhostItemStack>}. */
 	public static final Codec<NonNullList<GhostItemStack>> LIST_CODEC = NonNullList.codecOf(GhostItemStack.CODEC);
 
+	/**
+	 * The contained ghost stacks.
+	 */
 	protected NonNullList<GhostItemStack> stacks;
 
+	/**
+	 * Create a ghost stack handler with a single slot.
+	 */
 	public GhostStackHandler()
 	{
 		this(1);
 	}
 
+	/**
+	 * A "fake item stack handler." Extracted items are cleared instead of given and inserted
+	 * items are copied and not consumed.
+	 * <br/>
+	 * This is useful for filter-style blocks and items where you want to specify item
+	 * filters without needing to consume an item or use a weird UI.
+	 *
+	 * @param slots The amount of slots for the inventory.
+	 */
 	public GhostStackHandler(int slots)
 	{
 		this.stacks = NonNullList.withSize(slots, GhostItemStack.EMPTY);
 	}
 
+	/**
+	 * Create a ghost stack handler with the given stacks.
+	 *
+	 * @param stacks The stacks.
+	 */
 	public GhostStackHandler(Collection<GhostItemStack> stacks)
 	{
 		this.stacks = NonNullList.copyOf(stacks);
 	}
 
+	/**
+	 * Invoked any time the contents of the ghost stack handler change.
+	 *
+	 * @param slot The slot that changed.
+	 */
 	public void onContentsChanged(int slot)
 	{
 	}
 
+	/**
+	 * Get an item from the slot.
+	 *
+	 * @param i The index to get an item from.
+	 * @return The ghost item stack.
+	 */
 	public GhostItemStack get(int i)
 	{
 		return this.stacks.get(i);

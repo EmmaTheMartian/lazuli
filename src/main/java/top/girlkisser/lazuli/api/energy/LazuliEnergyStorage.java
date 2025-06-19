@@ -8,6 +8,13 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  */
 public class LazuliEnergyStorage extends EnergyStorage implements ISerializableEnergyStorage
 {
+	/**
+	 * A basic serializable energy storage implementation.
+	 *
+	 * @param capacity The capacity in RF/FE.
+	 * @param maxReceive The maximum amount of energy receivable per tick.
+	 * @param maxExtract The maximum amount of energy extractable per tick.
+	 */
 	public LazuliEnergyStorage(int capacity, int maxReceive, int maxExtract)
 	{
 		super(capacity, maxReceive, maxExtract);
@@ -51,7 +58,9 @@ public class LazuliEnergyStorage extends EnergyStorage implements ISerializableE
 	}
 
 	/**
-	 * @return A copy of this energy storage that cannot receive energy.
+	 * Creates a copy of this energy storage that cannot receive energy.
+	 *
+	 * @return The copy.
 	 */
 	public IEnergyStorage getExtractOnly()
 	{
@@ -96,7 +105,9 @@ public class LazuliEnergyStorage extends EnergyStorage implements ISerializableE
 	}
 
 	/**
-	 * @return A copy of this energy storage that cannot have energy extracted.
+	 * Creates a copy of this energy storage that cannot have energy extracted.
+	 *
+	 * @return The copy.
 	 */
 	public IEnergyStorage getReceiveOnly()
 	{

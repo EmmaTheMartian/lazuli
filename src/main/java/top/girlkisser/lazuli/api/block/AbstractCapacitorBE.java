@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -20,20 +21,43 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 public abstract class AbstractCapacitorBE extends AbstractEnergyBE implements ITickableBE, IInventoryBE<ItemStackHandler>
 {
+	/**
+	 * The capacitor's item handler.
+	 * <br/>
+	 * TODO: I don't think the capacitor should have an item handler *by default*.
+	 */
 	protected final ItemStackHandler itemHandler = new ItemStackHandler();
 
-	public static final int SLOT_COUNT = 1;
+	private static final int SLOT_COUNT = 1;
 
+	/**
+	 * A generic battery block with an inventory to charge items with.
+	 *
+	 * @param blockEntityType The block entity's type.
+	 * @param pos The block entity's position.
+	 * @param blockState The block entity's state.
+	 */
 	public AbstractCapacitorBE(BlockEntityType<? extends AbstractCapacitorBE> blockEntityType, BlockPos pos, BlockState blockState)
 	{
 		super(blockEntityType, pos, blockState);
 	}
 
+	/**
+	 * Get the item held by the item handler.
+	 *
+	 * @return The item stack.
+	 */
 	public ItemStack getHeldStack()
 	{
 		return itemHandler.getStackInSlot(0);
 	}
 
+	/**
+	 * Get the energy storage for a given direction (or no direction).
+	 *
+	 * @param direction The direction, this can be null.
+	 * @return The energy storage.
+	 */
 	public IEnergyStorage getEnergyStorage(@Nullable Direction direction)
 	{
 		return direction == Direction.UP || direction == null ?
@@ -42,7 +66,7 @@ public abstract class AbstractCapacitorBE extends AbstractEnergyBE implements IT
 	}
 
 	@Override
-	public ItemStackHandler getInventory()
+	public @NotNull ItemStackHandler getInventory()
 	{
 		return itemHandler;
 	}

@@ -62,11 +62,23 @@ public record UnpackedColour(int r, int g, int b, int a)
 		Codec.withAlternative(UnpackedColour.STRING_CODEC, UnpackedColour.PACKED_CODEC)
 	);
 
+	/**
+	 * Creates an unpacked colour using the provided R, G, and B values (0-255).
+	 *
+	 * @param r Red value from 0 to 255.
+	 * @param g Green value from 0 to 255.
+	 * @param b Blue value from 0 to 255.
+	 */
 	public UnpackedColour(int r, int g, int b)
 	{
 		this(r, g, b, 255);
 	}
 
+	/**
+	 * Creates an unpacked colour from the packed colour (expects ARGB32).
+	 *
+	 * @param packedColour The packed colour.
+	 */
 	public UnpackedColour(int packedColour)
 	{
 		this(
@@ -77,11 +89,21 @@ public record UnpackedColour(int r, int g, int b, int a)
 		);
 	}
 
+	/**
+	 * Gets the colour as a packed integer in ARGB32 format.
+	 *
+	 * @return The packed colour.
+	 */
 	public int pack()
 	{
 		return FastColor.ARGB32.color(a, r, g, b);
 	}
 
+	/**
+	 * Converts the unpacked colour to a {@link ColorRGBA}.
+	 *
+	 * @return The ColorRGBA.
+	 */
 	public ColorRGBA toColorRGBA()
 	{
 		return new ColorRGBA(pack());

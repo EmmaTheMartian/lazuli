@@ -15,9 +15,24 @@ import top.girlkisser.lazuli.api.menu.AbstractLazuliContainer;
  */
 public abstract class AbstractLazuliMenuScreen<T extends AbstractLazuliContainer> extends Screen implements MenuAccess<T>
 {
+	/** The menu. */
 	protected T menu;
-	protected int leftPos, topPos, imageWidth, imageHeight;
 
+	/** The screen's X position on the window. */
+	protected int leftPos;
+	/** The screen's Y position on the window. */
+	protected int topPos;
+	/** The screen's width. */
+	protected int imageWidth;
+	/** The screen's height. */
+	protected int imageHeight;
+
+	/**
+	 * Provides a basic {@link Screen} that does not implement {@link net.minecraft.client.gui.screens.inventory.ContainerScreen}.
+	 *
+	 * @param menu The menu.
+	 * @param title The screen's title.
+	 */
 	protected AbstractLazuliMenuScreen(T menu, Component title)
 	{
 		super(title);
@@ -25,7 +40,9 @@ public abstract class AbstractLazuliMenuScreen<T extends AbstractLazuliContainer
 	}
 
 	/**
-	 * @return The texture to use for the screen's background.
+	 * Gets the texture to use for the screen's background.
+	 *
+	 * @return The texture.
 	 */
 	protected abstract ResourceLocation getUI();
 
@@ -63,11 +80,21 @@ public abstract class AbstractLazuliMenuScreen<T extends AbstractLazuliContainer
 		graphics.blit(getUI(), leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
 	}
 
+	/**
+	 * Get the X position of the screen.
+	 *
+	 * @return The position.
+	 */
 	public int getGuiLeft()
 	{
 		return leftPos;
 	}
 
+	/**
+	 * Get the Y position of the screen.
+	 *
+	 * @return The position.
+	 */
 	public int getGuiTop()
 	{
 		return topPos;
