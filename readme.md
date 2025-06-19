@@ -1,5 +1,7 @@
 <div align="center">
 
+<img alt="Lazuli Logo" src="res/icon-320x.png" style="border-radius: 50%"/>
+
 # Lazuli
 
 </div>
