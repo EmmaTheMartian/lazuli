@@ -8,8 +8,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.ApiStatus;
 import top.girlkisser.lazuli.Lazuli;
 
-import java.util.function.UnaryOperator;
-
 /**
  * Common data components that can be used by mods depending on Lazuli.
  */
