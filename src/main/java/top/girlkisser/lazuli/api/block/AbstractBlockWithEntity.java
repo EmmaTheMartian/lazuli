@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * A block class which provides helpers for block entities and tickers.
@@ -32,7 +31,7 @@ public abstract class AbstractBlockWithEntity<T extends BlockEntity> extends Blo
 	 * A block class which provides helpers for block entities and tickers.
 	 *
 	 * @param blockEntityFactory Factory to create the block entity.
-	 * @param properties Block properties.
+	 * @param properties         Block properties.
 	 */
 	public AbstractBlockWithEntity(
 		BlockEntityType.BlockEntitySupplier<T> blockEntityFactory,

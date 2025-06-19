@@ -14,8 +14,7 @@ import java.util.function.Predicate;
  * An ingredient with a count.
  *
  * @param ingredient The ingredient.
- * @param count The count.
- *
+ * @param count      The count.
  * @see top.girlkisser.lazuli.api.inventory.ContainerUtils#extractItems(Container, Predicate, int)
  * @see top.girlkisser.lazuli.api.inventory.ContainerUtils#countItems(Container, Predicate)
  * @see top.girlkisser.lazuli.api.inventory.ContainerUtils#extractItemsForCrafting(Container, Predicate, int)

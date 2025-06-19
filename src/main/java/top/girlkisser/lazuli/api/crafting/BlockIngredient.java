@@ -22,7 +22,7 @@ import java.util.Optional;
  * An ingredient record for blocks or block tags.
  *
  * @param block The ingredient block, if any.
- * @param tag The ingredient tag, if any.
+ * @param tag   The ingredient tag, if any.
  */
 public record BlockIngredient(Optional<Block> block, Optional<TagKey<Block>> tag)
 {
@@ -99,7 +99,7 @@ public record BlockIngredient(Optional<Block> block, Optional<TagKey<Block>> tag
 	 * Name stands for "Block Ingredient from Resource Location"
 	 *
 	 * @param block The block's identifier, if any.
-	 * @param tag The tag's identifier, if any.
+	 * @param tag   The tag's identifier, if any.
 	 */
 	public record BIRL(Optional<ResourceLocation> block, Optional<ResourceLocation> tag)
 	{

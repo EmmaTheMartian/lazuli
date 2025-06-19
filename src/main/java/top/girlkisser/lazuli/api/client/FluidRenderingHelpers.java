@@ -11,7 +11,6 @@ import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.fluids.FluidStack;
-import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 
 /**
@@ -34,11 +33,11 @@ public final class FluidRenderingHelpers
 	 * <br>
 	 *
 	 * @param fluidStack The fluid stack to render.
-	 * @param graphics Graphics to render using.
-	 * @param x X coordinate for where to render the fluid at.
-	 * @param y Y coordinate for where to render the fluid at.
-	 * @param width Width of the "tank" in the GUI.
-	 * @param height Height of the "tank" in the GUI.
+	 * @param graphics   Graphics to render using.
+	 * @param x          X coordinate for where to render the fluid at.
+	 * @param y          Y coordinate for where to render the fluid at.
+	 * @param width      Width of the "tank" in the GUI.
+	 * @param height     Height of the "tank" in the GUI.
 	 */
 	@SuppressWarnings("resource")
 	public static void renderFluidGui(FluidStack fluidStack, GuiGraphics graphics, int x, int y, int width, int height)
@@ -116,11 +115,11 @@ public final class FluidRenderingHelpers
 	 * Renders the provided fluid stack in the GUI.
 	 *
 	 * @param fluidStack The fluid stack to render.
-	 * @param capacity The capacity of the tank.
-	 * @param graphics Graphics to render using.
-	 * @param x X coordinate for where to render the fluid at.
-	 * @param y Y coordinate for where to render the fluid at.
-	 * @param tankWidth Width of the "tank" in the GUI.
+	 * @param capacity   The capacity of the tank.
+	 * @param graphics   Graphics to render using.
+	 * @param x          X coordinate for where to render the fluid at.
+	 * @param y          Y coordinate for where to render the fluid at.
+	 * @param tankWidth  Width of the "tank" in the GUI.
 	 * @param tankHeight Height of the "tank" in the GUI.
 	 */
 	public static void renderFluidTankGui(FluidStack fluidStack, int capacity, GuiGraphics graphics, int x, int y, int tankWidth, int tankHeight)

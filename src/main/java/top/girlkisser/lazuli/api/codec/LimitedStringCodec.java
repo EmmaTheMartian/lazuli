@@ -50,9 +50,9 @@ public record LimitedStringCodec(Set<String> values) implements Codec<String>
 	/**
 	 * Create a {@link LimitedStringCodec} allowing the provided enum's values.
 	 *
-	 * @param values The enum's values.
+	 * @param values  The enum's values.
 	 * @param valueOf The enum's {@code valueOf} function.
-	 * @param <T> The enum's type.
+	 * @param <T>     The enum's type.
 	 * @return The codec.
 	 */
 	public static <T extends Enum<T>> Codec<T> enumStringCodec(T[] values, Function<String, T> valueOf)

@@ -72,7 +72,7 @@ public final class ContainerUtils
 	/**
 	 * Check if the provided list contains at least one item that matches the ingredient.
 	 *
-	 * @param stacks The stacks to check.
+	 * @param stacks     The stacks to check.
 	 * @param ingredient The ingredient to match.
 	 * @return Whether the list contains the ingredient.
 	 */
@@ -92,12 +92,11 @@ public final class ContainerUtils
 	 * Extract items from the given container and checks for crafting remainders on
 	 * extracted items.
 	 *
-	 * @see ContainerUtils#extractItems(Container, Predicate, int)
-	 *
 	 * @param container The container to extract items from.
 	 * @param matching  What predicate for which items to extract.
 	 * @param count     The maximum amount of items to extract.
 	 * @return The amount of items extracted.
+	 * @see ContainerUtils#extractItems(Container, Predicate, int)
 	 */
 	public static int extractItemsForCrafting(Container container, Predicate<ItemStack> matching, int count)
 	{

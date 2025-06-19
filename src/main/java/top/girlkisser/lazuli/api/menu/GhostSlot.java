@@ -15,9 +15,9 @@ public class GhostSlot extends Slot
 	 * contained item.
 	 *
 	 * @param container The container.
-	 * @param slot The slot index.
-	 * @param x The X position.
-	 * @param y The Y position.
+	 * @param slot      The slot index.
+	 * @param x         The X position.
+	 * @param y         The Y position.
 	 */
 	public GhostSlot(Container container, int slot, int x, int y)
 	{

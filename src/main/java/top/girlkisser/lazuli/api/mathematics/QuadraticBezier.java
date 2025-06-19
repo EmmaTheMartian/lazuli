@@ -14,9 +14,9 @@ import java.util.List;
 /**
  * A quadratic Bézier curve implementation.
  *
- * @param start The starting position.
+ * @param start   The starting position.
  * @param control The control point.
- * @param end The ending position.
+ * @param end     The ending position.
  */
 public record QuadraticBezier(Vector2f start, Vector2f control, Vector2f end)
 {
@@ -24,11 +24,11 @@ public record QuadraticBezier(Vector2f start, Vector2f control, Vector2f end)
 	 * A codec for a quadratic Bézier curve with the following format:
 	 * <br/>
 	 * <code>
-	 *     {
-	 *         "start": { "x": 0.0, "y": 0.0 },
-	 *         "control": { "x": 0.25, "y": 0.5 },
-	 *         "end": { "x": 1.0, "y": 1.0 }
-	 *     }
+	 * {
+	 * "start": { "x": 0.0, "y": 0.0 },
+	 * "control": { "x": 0.25, "y": 0.5 },
+	 * "end": { "x": 1.0, "y": 1.0 }
+	 * }
 	 * </code>
 	 */
 	public static final Codec<QuadraticBezier> CODEC = RecordCodecBuilder.create(it -> it.group(
@@ -43,11 +43,11 @@ public record QuadraticBezier(Vector2f start, Vector2f control, Vector2f end)
 	 * A codec for a quadratic Bézier curve with the following format:
 	 * <br/>
 	 * <code>
-	 *     [
-	 *         { "x": 0.0, "y": 0.0 },
-	 *         { "x": 0.5, "y": 0.5 },
-	 *         { "x": 1.0, "y": 1.0 }
-	 *     ]
+	 * [
+	 * { "x": 0.0, "y": 0.0 },
+	 * { "x": 0.5, "y": 0.5 },
+	 * { "x": 1.0, "y": 1.0 }
+	 * ]
 	 * </code>
 	 */
 	public static final Codec<QuadraticBezier> LIST_CODEC = LazuliExtraCodecs.VECTOR2F.listOf(3, 3).xmap(
@@ -89,12 +89,12 @@ public record QuadraticBezier(Vector2f start, Vector2f control, Vector2f end)
 	/**
 	 * Create a quadratic Bézier curve using the provided coordinates for points.
 	 *
-	 * @param startX The start point's X coordinate.
-	 * @param startY The start point's Y coordinate.
+	 * @param startX   The start point's X coordinate.
+	 * @param startY   The start point's Y coordinate.
 	 * @param controlX The control point's X coordinate.
 	 * @param controlY The control point's Y coordinate.
-	 * @param endX The end point's X coordinate.
-	 * @param endY The end point's Y coordinate.
+	 * @param endX     The end point's X coordinate.
+	 * @param endY     The end point's Y coordinate.
 	 */
 	public QuadraticBezier(float startX, float startY, float controlX, float controlY, float endX, float endY)
 	{

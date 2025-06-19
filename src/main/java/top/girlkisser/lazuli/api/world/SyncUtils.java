@@ -19,7 +19,7 @@ public final class SyncUtils
 	 * Update clients of the block state at the given position.
 	 *
 	 * @param level The level.
-	 * @param pos The block position.
+	 * @param pos   The block position.
 	 */
 	public static void sync(Level level, BlockPos pos)
 	{

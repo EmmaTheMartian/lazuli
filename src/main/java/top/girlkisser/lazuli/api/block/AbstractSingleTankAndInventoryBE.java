@@ -9,32 +9,42 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * A block entity implementing both {@link ISingleTankBE} and {@link IInventoryBE}.
  */
 public abstract class AbstractSingleTankAndInventoryBE
-		extends BlockEntity
-		implements ISingleTankBE, IInventoryBE<ItemStackHandler>
+	extends BlockEntity
+	implements ISingleTankBE, IInventoryBE<ItemStackHandler>
 {
-	/** The block entity's fluid tank. */
+	/**
+	 * The block entity's fluid tank.
+	 */
 	protected final FluidTank tank;
-	/** The tank's capacity in mB. */
+
+	/**
+	 * The tank's capacity in mB.
+	 */
 	protected final int tankCapacity;
-	/** The block entity's inventory */
+
+	/**
+	 * The block entity's inventory
+	 */
 	protected final ItemStackHandler inventory;
-	/** The amount of slots the inventory has. */
+
+	/**
+	 * The amount of slots the inventory has.
+	 */
 	protected final int slots;
 
 	/**
 	 * A block entity implementing both {@link ISingleTankBE} and {@link IInventoryBE}.
 	 *
-	 * @param type The block entity's type.
+	 * @param type         The block entity's type.
 	 * @param tankCapacity The tank's capacity in mB.
-	 * @param slots The amount of inventory slots.
-	 * @param pos The block entity's position.
-	 * @param blockState The block entity's block state.
+	 * @param slots        The amount of inventory slots.
+	 * @param pos          The block entity's position.
+	 * @param blockState   The block entity's block state.
 	 */
 	public AbstractSingleTankAndInventoryBE(BlockEntityType<?> type, int tankCapacity, int slots, BlockPos pos, BlockState blockState)
 	{

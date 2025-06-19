@@ -18,7 +18,7 @@ public class InstancedParticle2D
 	/**
 	 * Stores information about an active {@link IParticle2D}.
 	 *
-	 * @param particle The particle.
+	 * @param particle     The particle.
 	 * @param lifetimeLeft The particle's remaining lifetime.
 	 */
 	public InstancedParticle2D(

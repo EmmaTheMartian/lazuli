@@ -32,7 +32,9 @@ import java.util.Collection;
 @MethodsReturnNonnullByDefault
 public class GhostStackHandler implements IItemHandler, IItemHandlerModifiable, INBTSerializable<CompoundTag>
 {
-	/** A codec for a {@link NonNullList<GhostItemStack>}. */
+	/**
+	 * A codec for a {@link NonNullList<GhostItemStack>}.
+	 */
 	public static final Codec<NonNullList<GhostItemStack>> LIST_CODEC = NonNullList.codecOf(GhostItemStack.CODEC);
 
 	/**

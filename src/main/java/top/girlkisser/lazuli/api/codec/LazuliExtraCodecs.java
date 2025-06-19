@@ -18,7 +18,7 @@ public interface LazuliExtraCodecs
 	 * A codec for a JOML {@link Vector2f}. Syntax:
 	 * <br/>
 	 * <code>
-	 *     { "x": 0, "y": 0 }
+	 * { "x": 0, "y": 0 }
 	 * </code>
 	 */
 	Codec<Vector2f> VECTOR2F = RecordCodecBuilder.create(it -> it.group(
@@ -26,6 +26,8 @@ public interface LazuliExtraCodecs
 		Codec.FLOAT.fieldOf("y").forGetter(Vector2f::y)
 	).apply(it, Vector2f::new));
 
-	/** Stream codec for {@link #VECTOR2F}. */
+	/**
+	 * Stream codec for {@link #VECTOR2F}.
+	 */
 	StreamCodec<ByteBuf, Vector2f> VECTOR2F_STREAM_CODEC = ByteBufCodecs.fromCodec(VECTOR2F);
 }

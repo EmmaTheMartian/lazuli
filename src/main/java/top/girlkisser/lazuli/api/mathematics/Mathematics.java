@@ -15,11 +15,11 @@ public final class Mathematics
 	/**
 	 * Checks if the provided point is within the rectangle.
 	 *
-	 * @param pointX The point's X coordinate.
-	 * @param pointY The point's Y coordinate.
-	 * @param rectX The rect's X coordinate.
-	 * @param rectY The rect's Y coordinate.
-	 * @param rectWidth The rect's width.
+	 * @param pointX     The point's X coordinate.
+	 * @param pointY     The point's Y coordinate.
+	 * @param rectX      The rect's X coordinate.
+	 * @param rectY      The rect's Y coordinate.
+	 * @param rectWidth  The rect's width.
 	 * @param rectHeight The rect's height.
 	 * @return Whether the rect contains the point.
 	 */

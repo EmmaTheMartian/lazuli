@@ -2,6 +2,8 @@ package top.girlkisser.lazuli.api.block;
 
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 
+import java.util.Objects;
+
 /**
  * A basic interface for block entities with a single tank.
  */
@@ -46,9 +48,11 @@ public interface ISingleTankBE extends IFluidBE
 
 	/**
 	 * Attempts to distribute fluid to neighbouring blocks.
+	 * <br/>
+	 * **This method will throw an exception the level is null.**
 	 */
 	default void tryDistributeFluid()
 	{
-		IFluidBE.tryDistributeFluid(getTank(), getLevel(), getMaxFluidExtract(), this);
+		IFluidBE.tryDistributeFluid(getTank(), Objects.requireNonNull(getLevel()), getMaxFluidExtract(), this);
 	}
 }

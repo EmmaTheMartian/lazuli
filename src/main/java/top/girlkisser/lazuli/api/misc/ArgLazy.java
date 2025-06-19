@@ -7,7 +7,7 @@ import java.util.function.Function;
  * A clone of {@link net.neoforged.neoforge.common.util.Lazy} except ArgLazy takes in an
  * argument too.
  *
- * @param <ItT> The return type.
+ * @param <ItT>  The return type.
  * @param <ArgT> The argument type.
  */
 public class ArgLazy<ItT, ArgT>

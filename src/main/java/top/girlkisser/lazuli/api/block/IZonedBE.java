@@ -13,6 +13,7 @@ import net.neoforged.neoforge.common.util.Lazy;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
 
@@ -99,8 +100,8 @@ public interface IZonedBE extends IBE
 	 *
 	 * @param class_ The entity class to find. Use {@code Entity.class} for "any."
 	 * @param filter A filter to apply.
+	 * @param <T>    The entity type to find.
 	 * @return The first entity, if any.
-	 * @param <T> The entity type to find.
 	 */
 	default <T extends Entity> Optional<T> getFirstEntityInWorkZone(Class<T> class_, @Nullable Predicate<T> filter)
 	{
@@ -109,15 +110,17 @@ public interface IZonedBE extends IBE
 
 	/**
 	 * Get all entities in the work zone that are of {@code class_} and match {@code filter}.
+	 * <br/>
+	 * **This method will throw an exception if the level is null.**
 	 *
 	 * @param class_ The entity class to find. Use {@code Entity.class} for "any."
 	 * @param filter A filter to apply.
+	 * @param <T>    The entity type to find.
 	 * @return The first entity, if any.
-	 * @param <T> The entity type to find.
 	 */
 	default <T extends Entity> List<T> getEntitiesInWorkZone(Class<T> class_, @Nullable Predicate<T> filter)
 	{
-		List<T> found = getLevel().getEntitiesOfClass(class_, getCachedWorkZone().get());
+		List<T> found = Objects.requireNonNull(getLevel()).getEntitiesOfClass(class_, getCachedWorkZone().get());
 		if (filter != null)
 		{
 			found.removeIf(filter.negate());
@@ -125,27 +128,43 @@ public interface IZonedBE extends IBE
 		return found;
 	}
 
-	/** Returns `true` when the entity is a {@link Player}. */
+	/**
+	 * Returns `true` when the entity is a {@link Player}.
+	 */
 	Predicate<Entity> IS_PLAYER = e -> e instanceof Player;
 
-	/** Returns `true` when the entity is **NOT** a {@link Player}. */
+	/**
+	 * Returns `true` when the entity is **NOT** a {@link Player}.
+	 */
 	Predicate<Entity> NOT_PLAYER = Predicate.not(IS_PLAYER);
 
-	/** Returns `true` when the entity is an {@link ItemEntity}. */
+	/**
+	 * Returns `true` when the entity is an {@link ItemEntity}.
+	 */
 	Predicate<Entity> IS_ITEM = e -> e instanceof ItemEntity;
 
-	/** Returns `true` when the entity is **NOT** {@link Player}. */
+	/**
+	 * Returns `true` when the entity is **NOT** {@link Player}.
+	 */
 	Predicate<Entity> NOT_ITEM = Predicate.not(IS_ITEM);
 
-	/** Returns `true` when the entity is a baby. */
+	/**
+	 * Returns `true` when the entity is a baby.
+	 */
 	Predicate<LivingEntity> IS_BABY = LivingEntity::isBaby;
 
-	/** Returns `true` when the entity is **NOT** a baby. */
+	/**
+	 * Returns `true` when the entity is **NOT** a baby.
+	 */
 	Predicate<LivingEntity> NOT_BABY = Predicate.not(IS_BABY);
 
-	/** Returns `true` when the entity is an animal and is an adult. */
+	/**
+	 * Returns `true` when the entity is an animal and is an adult.
+	 */
 	Predicate<LivingEntity> IS_ADULT_ANIMAL = NOT_BABY.and(NOT_PLAYER).and(NOT_ITEM);
 
-	/** Returns `true` when the entity is an animal and is a baby. */
+	/**
+	 * Returns `true` when the entity is an animal and is a baby.
+	 */
 	Predicate<LivingEntity> IS_BABY_ANIMAL = IS_BABY.and(NOT_PLAYER).and(NOT_ITEM);
 }

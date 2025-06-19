@@ -6,7 +6,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.NotNull;
 import top.girlkisser.lazuli.api.energy.ProtectiveEnergyStorage;
 
 import java.util.Objects;
@@ -21,8 +20,8 @@ public abstract class AbstractEnergyBE extends BlockEntity implements IEnergyBE
 	/**
 	 * A block entity with an energy storage.
 	 *
-	 * @param type The block entity's type.
-	 * @param pos The block entity's position.
+	 * @param type       The block entity's type.
+	 * @param pos        The block entity's position.
 	 * @param blockState The block entity's block state.
 	 */
 	public AbstractEnergyBE(BlockEntityType<?> type, BlockPos pos, BlockState blockState)

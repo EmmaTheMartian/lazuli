@@ -7,5 +7,6 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 /**
  * A serializable fluid handler.
  */
-public interface ISerializableFluidHandler extends IFluidHandler, INBTSerializable<CompoundTag> {
+public interface ISerializableFluidHandler extends IFluidHandler, INBTSerializable<CompoundTag>
+{
 }

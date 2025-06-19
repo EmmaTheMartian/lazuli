@@ -14,9 +14,9 @@ public class SlotOutputOnly extends Slot
 	 * A slot that allows extracts but not inserts.
 	 *
 	 * @param container The container.
-	 * @param slot The slot index.
-	 * @param x The X position.
-	 * @param y The Y position.
+	 * @param slot      The slot index.
+	 * @param x         The X position.
+	 * @param y         The Y position.
 	 */
 	public SlotOutputOnly(Container container, int slot, int x, int y)
 	{

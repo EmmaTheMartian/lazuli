@@ -83,7 +83,7 @@ public interface LazuliItem
 	 * **This method will throw an exception if the item does not have a fluid handler.**
 	 *
 	 * @param stack The stack.
-	 * @param tank The tank's index.
+	 * @param tank  The tank's index.
 	 * @return The fluid stack.
 	 */
 	default @Nullable FluidStack getFluid(ItemStack stack, int tank)
@@ -110,7 +110,7 @@ public interface LazuliItem
 	 * **This method will throw an exception if the item does not have a fluid handler.**
 	 *
 	 * @param stack The stack.
-	 * @param tank The tank's index.
+	 * @param tank  The tank's index.
 	 * @return The capacity.
 	 */
 	default int getFluidTankCapacity(ItemStack stack, int tank)

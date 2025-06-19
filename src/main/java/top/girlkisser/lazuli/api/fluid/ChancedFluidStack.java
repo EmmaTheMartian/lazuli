@@ -13,7 +13,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
  * A record for a fluid stack which has a chance of being empty. This is mainly
  * used as a recipe output.
  *
- * @param stack The fluid stack.
+ * @param stack  The fluid stack.
  * @param chance The chance that the fluid stack is not empty.
  */
 public record ChancedFluidStack(FluidStack stack, float chance)
@@ -29,7 +29,7 @@ public record ChancedFluidStack(FluidStack stack, float chance)
 	 * A record for a fluid stack which has a chance of being empty. This is mainly
 	 * used as a recipe output.
 	 *
-	 * @param fluid The fluid.
+	 * @param fluid  The fluid.
 	 * @param amount The amount of fluid in mB.
 	 * @param chance The chance that the fluid stack is not empty.
 	 */

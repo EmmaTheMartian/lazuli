@@ -109,6 +109,10 @@ Notes to contributors:
 - **If you use another person's code, CREDIT THEM AND MAKE SURE YOU'RE ALLOWED
   TO USE THEIR CODE.** If you steal, I will ban you from the repository.
   [Don't be a jerk](https://github.com/CoFH/ThermalExpansion?tab=readme-ov-file#cofh-dont-be-a-jerk-license-v2).
+- Format your code! You can either use `Shift+Shift` and find `Format Code`, or
+  if you have a keybind for it then you can use that. Mine is `Alt+Shift+F`.
+  Just run this on your uncommitted files before pushing. You should also run
+  an `Optimize Imports` on your uncommitted files before pushing.
 - That's about it! TL;DR, follow my general style in the codebase and be kind!
 
 ## Todo

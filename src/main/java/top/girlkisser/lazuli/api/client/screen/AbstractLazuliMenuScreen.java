@@ -5,7 +5,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
 import top.girlkisser.lazuli.api.menu.AbstractLazuliContainer;
 
 /**
@@ -15,22 +14,35 @@ import top.girlkisser.lazuli.api.menu.AbstractLazuliContainer;
  */
 public abstract class AbstractLazuliMenuScreen<T extends AbstractLazuliContainer> extends Screen implements MenuAccess<T>
 {
-	/** The menu. */
+	/**
+	 * The menu.
+	 */
 	protected T menu;
 
-	/** The screen's X position on the window. */
+	/**
+	 * The screen's X position on the window.
+	 */
 	protected int leftPos;
-	/** The screen's Y position on the window. */
+
+	/**
+	 * The screen's Y position on the window.
+	 */
 	protected int topPos;
-	/** The screen's width. */
+
+	/**
+	 * The screen's width.
+	 */
 	protected int imageWidth;
-	/** The screen's height. */
+
+	/**
+	 * The screen's height.
+	 */
 	protected int imageHeight;
 
 	/**
 	 * Provides a basic {@link Screen} that does not implement {@link net.minecraft.client.gui.screens.inventory.ContainerScreen}.
 	 *
-	 * @param menu The menu.
+	 * @param menu  The menu.
 	 * @param title The screen's title.
 	 */
 	protected AbstractLazuliMenuScreen(T menu, Component title)

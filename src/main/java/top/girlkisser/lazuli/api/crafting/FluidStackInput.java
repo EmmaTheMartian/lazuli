@@ -3,7 +3,6 @@ package top.girlkisser.lazuli.api.crafting;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.neoforged.neoforge.fluids.FluidStack;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * A recipe input for {@link FluidStack}s.

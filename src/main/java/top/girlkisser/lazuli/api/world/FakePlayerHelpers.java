@@ -40,8 +40,8 @@ public final class FakePlayerHelpers
 	 * Breaks a block and gets the drops from it. The drops are not added in the world.
 	 *
 	 * @param serverLevel The level.
-	 * @param blockState The block state to break.
-	 * @param pos The block's position.
+	 * @param blockState  The block state to break.
+	 * @param pos         The block's position.
 	 * @return The block's drops.
 	 */
 	public static List<ItemStack> breakBlockAndGetDrops(ServerLevel serverLevel, BlockState blockState, BlockPos pos)
@@ -61,7 +61,7 @@ public final class FakePlayerHelpers
 	 * Breaks a block and gets the drops from it. The drops are not added in the world.
 	 *
 	 * @param serverLevel The level.
-	 * @param pos The block's position.
+	 * @param pos         The block's position.
 	 * @return The block's drops.
 	 */
 	public static List<ItemStack> breakBlockAndGetDrops(ServerLevel serverLevel, BlockPos pos)
@@ -104,7 +104,7 @@ public final class FakePlayerHelpers
 	 * @param level The level.
 	 * @param stack The held item stack.
 	 * @param pos   The block position.
-	 * @return      The context.
+	 * @return The context.
 	 */
 	public static UseOnContext getUseOnContext(ServerLevel level, ItemStack stack, BlockPos pos)
 	{

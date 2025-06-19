@@ -26,6 +26,7 @@ import top.girlkisser.lazuli.api.collections.ArrayHelpers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Provides a large number of helper functions for block entities with inventories.
@@ -68,8 +69,8 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	/**
 	 * Controls whether an item can be inserted into the given slot through the given face.
 	 *
-	 * @param index The slot to check.
-	 * @param stack The item attempting to be inserted.
+	 * @param index     The slot to check.
+	 * @param stack     The item attempting to be inserted.
 	 * @param direction The direction the item is being inserted on.
 	 * @return `true` if the item can be inserted.
 	 */
@@ -82,8 +83,8 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	/**
 	 * Controls whether an item can be taken from the given slot through the given face.
 	 *
-	 * @param index The slot to check.
-	 * @param stack The item attempting to be inserted.
+	 * @param index     The slot to check.
+	 * @param stack     The item attempting to be inserted.
 	 * @param direction The direction the item is being inserted on.
 	 * @return `true` if the item can be inserted.
 	 */
@@ -149,7 +150,7 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	/**
 	 * Removes `amount` items from the given slot and returns the taken {@link ItemStack}.
 	 *
-	 * @param slot The slot to remove items from.
+	 * @param slot   The slot to remove items from.
 	 * @param amount The amount to remove.
 	 * @return An {@link ItemStack} containing the item removed and the amount removed.
 	 */
@@ -174,7 +175,7 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	/**
 	 * Set the {@link ItemStack} in the given slot.
 	 *
-	 * @param slot The slot index.
+	 * @param slot  The slot index.
 	 * @param stack The stack.
 	 */
 	default void setItem(int slot, ItemStack stack)
@@ -185,13 +186,15 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	/**
 	 * Returns true if the container is still valid for the player to interact with. The
 	 * default implementation checks if the player is within range of the block entity.
+	 * <br/>
+	 * **This method will throw an exception if the level is null.**
 	 *
 	 * @param player The player to check.
 	 * @return `true` if the player is still able to access the inventory.
 	 */
 	default boolean stillValid(Player player)
 	{
-		return ContainerLevelAccess.create(getLevel(), getBlockPos()).evaluate((level, pos) ->
+		return ContainerLevelAccess.create(Objects.requireNonNull(getLevel()), getBlockPos()).evaluate((level, pos) ->
 			player.canInteractWithBlock(pos, player.blockInteractionRange()), true);
 	}
 

@@ -7,5 +7,6 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
 /**
  * An NBT serializable energy storage.
  */
-public interface ISerializableEnergyStorage extends IEnergyStorage, INBTSerializable<Tag> {
+public interface ISerializableEnergyStorage extends IEnergyStorage, INBTSerializable<Tag>
+{
 }

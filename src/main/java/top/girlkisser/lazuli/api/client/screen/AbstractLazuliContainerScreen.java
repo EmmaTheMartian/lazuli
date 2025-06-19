@@ -5,7 +5,6 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import org.jetbrains.annotations.NotNull;
 import top.girlkisser.lazuli.api.menu.AbstractLazuliContainer;
 
 /**
@@ -20,9 +19,9 @@ public abstract class AbstractLazuliContainerScreen<T extends AbstractLazuliCont
 	 * A basic implementation for {@link net.minecraft.client.gui.screens.Screen}s
 	 * with {@link AbstractLazuliContainer} menus.
 	 *
-	 * @param menu The menu.
+	 * @param menu            The menu.
 	 * @param playerInventory The player's inventory.
-	 * @param title The screen's title.
+	 * @param title           The screen's title.
 	 */
 	protected AbstractLazuliContainerScreen(T menu, Inventory playerInventory, Component title)
 	{

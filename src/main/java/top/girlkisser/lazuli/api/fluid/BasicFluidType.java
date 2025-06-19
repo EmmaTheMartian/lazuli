@@ -8,10 +8,7 @@ import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidType;
-import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
-
-import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * A basic {@link FluidType} implementation.
@@ -20,18 +17,28 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 public class BasicFluidType extends FluidType
 {
-	/** The texture to use for the fluid's still texture. */
+	/**
+	 * The texture to use for the fluid's still texture.
+	 */
 	public final ResourceLocation stillTexture;
-	/** The texture to use for the fluid's flowing texture. */
+
+	/**
+	 * The texture to use for the fluid's flowing texture.
+	 */
 	public final ResourceLocation flowingTexture;
-	/** The texture to use for the fluid's overlay texture. */
+
+	/**
+	 * The texture to use for the fluid's overlay texture.
+	 */
 	public final ResourceLocation overlayTexture;
+
 	/**
 	 * The fluid type's tint colour as a packed integer.
 	 * <br/>
 	 * TODO: Convert this to an UnpackedColour
 	 */
 	public final int tintColour;
+
 	/**
 	 * The fluid type's fog colour as a {@link Vector3f}.
 	 * <br/>
@@ -42,16 +49,17 @@ public class BasicFluidType extends FluidType
 	/**
 	 * A basic {@link FluidType} implementation.
 	 *
-	 * @param stillTexture The fluid's still texture.
+	 * @param stillTexture   The fluid's still texture.
 	 * @param flowingTexture The fluid's flowing texture.
 	 * @param overlayTexture The fluid's overlay texture.
-	 * @param tintColour The tint to apply to the textures.
-	 * @param fogColour The fog colour when swimming in the fluid.
-	 * @param properties The fluid's properties.
+	 * @param tintColour     The tint to apply to the textures.
+	 * @param fogColour      The fog colour when swimming in the fluid.
+	 * @param properties     The fluid's properties.
 	 */
 	public BasicFluidType(ResourceLocation stillTexture, ResourceLocation flowingTexture, ResourceLocation overlayTexture, int tintColour, Vector3f fogColour, Properties properties)
 	{
 		super(properties);
+
 		this.stillTexture = stillTexture;
 		this.flowingTexture = flowingTexture;
 		this.overlayTexture = overlayTexture;

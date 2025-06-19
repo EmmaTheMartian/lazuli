@@ -40,7 +40,7 @@ public class LazuliItemStackHandler extends ItemStackHandler implements ISeriali
 	/**
 	 * Attempt to insert an item into the stack handler.
 	 *
-	 * @param stack The item stack to insert.
+	 * @param stack    The item stack to insert.
 	 * @param simulate If this action should be simulated.
 	 * @return The remainder, if there was one.
 	 */
@@ -52,8 +52,8 @@ public class LazuliItemStackHandler extends ItemStackHandler implements ISeriali
 	/**
 	 * Attempt to insert an item into the stack handler.
 	 *
-	 * @param handler The inventory to insert into.
-	 * @param stack The item stack to insert.
+	 * @param handler  The inventory to insert into.
+	 * @param stack    The item stack to insert.
 	 * @param simulate If this action should be simulated.
 	 * @return The remainder, if there was one.
 	 */

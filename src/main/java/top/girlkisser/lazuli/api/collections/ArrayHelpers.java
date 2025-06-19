@@ -12,8 +12,8 @@ public final class ArrayHelpers
 	/**
 	 * Creates an array using the provided range.
 	 *
-	 * @param min The initial value (inclusive).
-	 * @param max The ending value (exclusive).
+	 * @param min  The initial value (inclusive).
+	 * @param max  The ending value (exclusive).
 	 * @param step The step between values.
 	 * @return An array containing the range of integers.
 	 */
@@ -57,8 +57,8 @@ public final class ArrayHelpers
 	 *
 	 * @param array The array to check.
 	 * @param entry The entry to check for.
+	 * @param <T>   The array's type.
 	 * @return Whether the array contains the given entry.
-	 * @param <T> The array's type.
 	 */
 	public static <T> boolean contains(T[] array, T entry)
 	{

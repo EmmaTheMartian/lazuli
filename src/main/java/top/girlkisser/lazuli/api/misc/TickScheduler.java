@@ -17,10 +17,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class TickScheduler
 {
-	/** A tick scheduler for the server. */
+	/**
+	 * A tick scheduler for the server.
+	 */
 	public static final TickScheduler SERVER = new TickScheduler();
 
-	/** A tick scheduler for the client. */
+	/**
+	 * A tick scheduler for the client.
+	 */
 	@OnlyIn(Dist.CLIENT)
 	public static final TickScheduler CLIENT = new TickScheduler();
 
@@ -60,7 +64,7 @@ public class TickScheduler
 	/**
 	 * Schedule a task to run in {@code inTicks} ticks.
 	 *
-	 * @param inTicks The amount of ticks to wait until execution.
+	 * @param inTicks  The amount of ticks to wait until execution.
 	 * @param runnable The task to execute.
 	 */
 	public void scheduleWork(int inTicks, Runnable runnable)

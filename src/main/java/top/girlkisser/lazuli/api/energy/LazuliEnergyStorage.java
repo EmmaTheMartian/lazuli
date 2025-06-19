@@ -11,7 +11,7 @@ public class LazuliEnergyStorage extends EnergyStorage implements ISerializableE
 	/**
 	 * A basic serializable energy storage implementation.
 	 *
-	 * @param capacity The capacity in RF/FE.
+	 * @param capacity   The capacity in RF/FE.
 	 * @param maxReceive The maximum amount of energy receivable per tick.
 	 * @param maxExtract The maximum amount of energy extractable per tick.
 	 */
@@ -30,7 +30,7 @@ public class LazuliEnergyStorage extends EnergyStorage implements ISerializableE
 	/**
 	 * Add energy to the storage.
 	 *
-	 * @param energy How much energy to add.
+	 * @param energy   How much energy to add.
 	 * @param simulate If this action should be simulated or not.
 	 * @return The amount of energy received.
 	 */
@@ -45,7 +45,7 @@ public class LazuliEnergyStorage extends EnergyStorage implements ISerializableE
 	/**
 	 * Remove energy from the storage.
 	 *
-	 * @param energy How much energy to add.
+	 * @param energy   How much energy to add.
 	 * @param simulate If this action should be simulated or not.
 	 * @return The amount of energy extracted.
 	 */

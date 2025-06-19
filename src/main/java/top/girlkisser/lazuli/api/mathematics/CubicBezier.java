@@ -14,10 +14,10 @@ import java.util.List;
 /**
  * A cubic Bézier curve implementation.
  *
- * @param start The starting position.
+ * @param start    The starting position.
  * @param control1 The first control point.
  * @param control2 The second control point.
- * @param end The ending position.
+ * @param end      The ending position.
  */
 public record CubicBezier(Vector2f start, Vector2f control1, Vector2f control2, Vector2f end)
 {
@@ -25,12 +25,12 @@ public record CubicBezier(Vector2f start, Vector2f control1, Vector2f control2, 
 	 * A codec for a cubic Bézier curve with the following format:
 	 * <br/>
 	 * <code>
-	 *     {
-	 *         "start": { "x": 0.0, "y": 0.0 },
-	 *         "control1": { "x": 0.25, "y": 0.5 },
-	 *         "control2": { "x": 0.75, "y": 0.2 },
-	 *         "end": { "x": 1.0, "y": 1.0 }
-	 *     }
+	 * {
+	 * "start": { "x": 0.0, "y": 0.0 },
+	 * "control1": { "x": 0.25, "y": 0.5 },
+	 * "control2": { "x": 0.75, "y": 0.2 },
+	 * "end": { "x": 1.0, "y": 1.0 }
+	 * }
 	 * </code>
 	 */
 	public static final Codec<CubicBezier> CODEC = RecordCodecBuilder.create(it -> it.group(
@@ -46,12 +46,12 @@ public record CubicBezier(Vector2f start, Vector2f control1, Vector2f control2, 
 	 * A codec for a cubic Bézier curve with the following format:
 	 * <br/>
 	 * <code>
-	 *     [
-	 *         { "x": 0.0, "y": 0.0 },
-	 *         { "x": 0.25, "y": 0.5 },
-	 *         { "x": 0.75, "y": 0.2 },
-	 *         { "x": 1.0, "y": 1.0 }
-	 *     ]
+	 * [
+	 * { "x": 0.0, "y": 0.0 },
+	 * { "x": 0.25, "y": 0.5 },
+	 * { "x": 0.75, "y": 0.2 },
+	 * { "x": 1.0, "y": 1.0 }
+	 * ]
 	 * </code>
 	 */
 	public static final Codec<CubicBezier> LIST_CODEC = LazuliExtraCodecs.VECTOR2F.listOf(4, 4).xmap(
@@ -98,14 +98,14 @@ public record CubicBezier(Vector2f start, Vector2f control1, Vector2f control2, 
 	/**
 	 * Create a cubic Bézier curve using the provided coordinates for points.
 	 *
-	 * @param startX The start point's X coordinate.
-	 * @param startY The start point's Y coordinate.
+	 * @param startX    The start point's X coordinate.
+	 * @param startY    The start point's Y coordinate.
 	 * @param control1X The first control point's X coordinate.
 	 * @param control1Y The first control point's Y coordinate.
 	 * @param control2X The second control point's X coordinate.
 	 * @param control2Y The second control point's Y coordinate.
-	 * @param endX The end point's X coordinate.
-	 * @param endY The end point's Y coordinate.
+	 * @param endX      The end point's X coordinate.
+	 * @param endY      The end point's Y coordinate.
 	 */
 	public CubicBezier(float startX, float startY, float control1X, float control1Y, float control2X, float control2Y, float endX, float endY)
 	{

@@ -16,9 +16,14 @@ import java.util.List;
  */
 public class WeightedRandomList<T extends WeightedRandomList.IWeighted>
 {
-	/** The list's entries. */
+	/**
+	 * The list's entries.
+	 */
 	protected final List<Entry<T>> entries;
-	/** The total weight of all entries in the list. */
+
+	/**
+	 * The total weight of all entries in the list.
+	 */
 	protected int accumulatedWeight;
 
 	/**
@@ -78,9 +83,9 @@ public class WeightedRandomList<T extends WeightedRandomList.IWeighted>
 	/**
 	 * An entry in the list.
 	 *
-	 * @param it The entry's value.
+	 * @param it                The entry's value.
 	 * @param accumulatedWeight The accumulated weight of the value.
-	 * @param <T> The entry's type.
+	 * @param <T>               The entry's type.
 	 */
 	public record Entry<T>(T it, int accumulatedWeight)
 	{

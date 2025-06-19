@@ -13,7 +13,7 @@ import net.minecraft.world.level.ItemLike;
  * A record for an item stack which has a chance of being empty. This is mainly
  * used as a recipe output.
  *
- * @param stack The item stack.
+ * @param stack  The item stack.
  * @param chance The chance that the item stack is not empty.
  */
 public record ChancedItemStack(ItemStack stack, float chance)
@@ -29,7 +29,7 @@ public record ChancedItemStack(ItemStack stack, float chance)
 	 * A record for an item stack which has a chance of being empty. This is mainly
 	 * used as a recipe output.
 	 *
-	 * @param item The item.
+	 * @param item   The item.
 	 * @param chance The chance that the item stack is not empty.
 	 */
 	public ChancedItemStack(ItemLike item, float chance)
@@ -41,8 +41,8 @@ public record ChancedItemStack(ItemStack stack, float chance)
 	 * A record for an item stack which has a chance of being empty. This is mainly
 	 * used as a recipe output.
 	 *
-	 * @param item The item.
-	 * @param count The item's count.
+	 * @param item   The item.
+	 * @param count  The item's count.
 	 * @param chance The chance that the item stack is not empty.
 	 */
 	public ChancedItemStack(ItemLike item, int count, float chance)

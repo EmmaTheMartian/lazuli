@@ -27,7 +27,7 @@ public final class TooltipUtil
 	/**
 	 * Get a {@link Component} for the {@link FluidStack}.
 	 *
-	 * @param stack The fluid stack.
+	 * @param stack       The fluid stack.
 	 * @param maxCapacity The maximum capacity for the fluid stack.
 	 * @return The component.
 	 */

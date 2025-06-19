@@ -15,7 +15,9 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @MethodsReturnNonnullByDefault
 public class RoundRobinInventory extends ItemStackHandler
 {
-	/** The next index to insert an item into. */
+	/**
+	 * The next index to insert an item into.
+	 */
 	protected int index = 0; //TODO: serialize this for consistency
 
 	/**
@@ -67,7 +69,7 @@ public class RoundRobinInventory extends ItemStackHandler
 	/**
 	 * Inserts an item into the inventory.
 	 *
-	 * @param stack The stack to insert.
+	 * @param stack    The stack to insert.
 	 * @param simulate If this action should be simulated or not.
 	 * @return The remainder item stack, if any.
 	 */

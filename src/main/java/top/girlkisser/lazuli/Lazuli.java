@@ -18,16 +18,21 @@ import top.girlkisser.lazuli.common.LazuliDataComponents;
 @ApiStatus.Internal
 public class Lazuli
 {
-	/** Lazuli's mod ID */
+	/**
+	 * Lazuli's mod ID
+	 */
 	public static final String MODID = "lazuli";
-	/** Lazuli's logger. */
+
+	/**
+	 * Lazuli's logger.
+	 */
 	public static final Logger LOGGER = LogUtils.getLogger();
 
 	/**
 	 * Don't ever use this. Kthxbai!
 	 *
-	 * @param bus The wheels on the bus go round-and-round...
-	 * @param mod Round-and-round...
+	 * @param bus  The wheels on the bus go round-and-round...
+	 * @param mod  Round-and-round...
 	 * @param dist Round-and-round...
 	 */
 	public Lazuli(IEventBus bus, ModContainer mod, Dist dist)

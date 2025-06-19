@@ -21,10 +21,14 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 public class GhostItemStack implements INBTSerializable<CompoundTag>
 {
-	/** A codec for {@link GhostItemStack}s, based on {@link ItemStack#OPTIONAL_CODEC}. */
+	/**
+	 * A codec for {@link GhostItemStack}s, based on {@link ItemStack#OPTIONAL_CODEC}.
+	 */
 	public static final Codec<GhostItemStack> CODEC = ItemStack.OPTIONAL_CODEC.xmap(GhostItemStack::new, GhostItemStack::getStack);
 
-	/** An empty {@link GhostItemStack}. */
+	/**
+	 * An empty {@link GhostItemStack}.
+	 */
 	public static final GhostItemStack EMPTY = new GhostItemStack((Void) null);
 
 	private ItemStack stack;
@@ -52,8 +56,8 @@ public class GhostItemStack implements INBTSerializable<CompoundTag>
 	/**
 	 * A fake item stack. Mimics the public methods from {@link ItemStack}.
 	 *
-	 * @param item The ghost stack's item.
-	 * @param count The ghost stack's count.
+	 * @param item       The ghost stack's item.
+	 * @param count      The ghost stack's count.
 	 * @param components The ghost stack's data components.
 	 */
 	public GhostItemStack(Holder<Item> item, int count, DataComponentPatch components)
@@ -65,7 +69,7 @@ public class GhostItemStack implements INBTSerializable<CompoundTag>
 	/**
 	 * A fake item stack. Mimics the public methods from {@link ItemStack}.
 	 *
-	 * @param item The ghost stack's item.
+	 * @param item  The ghost stack's item.
 	 * @param count The ghost stack's count.
 	 */
 	public GhostItemStack(Holder<Item> item, int count)
@@ -76,7 +80,7 @@ public class GhostItemStack implements INBTSerializable<CompoundTag>
 	/**
 	 * A fake item stack. Mimics the public methods from {@link ItemStack}.
 	 *
-	 * @param item The ghost stack's item.
+	 * @param item  The ghost stack's item.
 	 * @param count The ghost stack's count.
 	 */
 	public GhostItemStack(ItemLike item, int count)

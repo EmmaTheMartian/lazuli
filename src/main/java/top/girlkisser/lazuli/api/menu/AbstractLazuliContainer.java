@@ -29,9 +29,9 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	/**
 	 * A basic implementation for {@link AbstractContainerMenu}.
 	 *
-	 * @param menuType The menu type.
-	 * @param slotCount The amount of slots in the menu.
-	 * @param containerId The container ID.
+	 * @param menuType        The menu type.
+	 * @param slotCount       The amount of slots in the menu.
+	 * @param containerId     The container ID.
 	 * @param playerInventory The player's inventory.
 	 */
 	protected AbstractLazuliContainer(MenuType<?> menuType, int slotCount, int containerId, Inventory playerInventory)
@@ -75,11 +75,11 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	 * Add a range of slots.
 	 *
 	 * @param container The inventory that the slots are for.
-	 * @param index The slot index that the first created slot should access.
-	 * @param x The X position of the first slot.
-	 * @param y The Y position of the first slot.
-	 * @param count How many slots to create.
-	 * @param dx The width/gap of each slot, usually 18.
+	 * @param index     The slot index that the first created slot should access.
+	 * @param x         The X position of the first slot.
+	 * @param y         The Y position of the first slot.
+	 * @param count     How many slots to create.
+	 * @param dx        The width/gap of each slot, usually 18.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addSlotRange(Container container, int index, int x, int y, int count, int dx)
@@ -91,12 +91,12 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	 * Add a range of slots using the provided slot factory to create slots with.
 	 *
 	 * @param container The inventory that the slots are for.
-	 * @param index The slot index that the first created slot should access.
-	 * @param x The X position of the first slot.
-	 * @param y The Y position of the first slot.
-	 * @param count How many slots to create.
-	 * @param dx The width/gap of each slot, usually 18.
-	 * @param factory The slot factory to use.
+	 * @param index     The slot index that the first created slot should access.
+	 * @param x         The X position of the first slot.
+	 * @param y         The Y position of the first slot.
+	 * @param count     How many slots to create.
+	 * @param dx        The width/gap of each slot, usually 18.
+	 * @param factory   The slot factory to use.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addSlotRange(Container container, int index, int x, int y, int count, int dx, SlotFactory factory)
@@ -113,14 +113,14 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	/**
 	 * Add a 2D range of slots.
 	 *
-	 * @param container The inventory that the slots are for.
-	 * @param index The slot index that the first created slot should access.
-	 * @param x The X position of the first slot.
-	 * @param y The Y position of the first slot.
+	 * @param container       The inventory that the slots are for.
+	 * @param index           The slot index that the first created slot should access.
+	 * @param x               The X position of the first slot.
+	 * @param y               The Y position of the first slot.
 	 * @param horizontalCount How many slots to create on the horizontal axis.
-	 * @param verticalCount How many slots to create on the vertical axis.
-	 * @param dx The width/gap of each slot, usually 18.
-	 * @param dy The height/gap of each slot, usually 18.
+	 * @param verticalCount   How many slots to create on the vertical axis.
+	 * @param dx              The width/gap of each slot, usually 18.
+	 * @param dy              The height/gap of each slot, usually 18.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addSlotBox(Container container, int index, int x, int y, int horizontalCount, int verticalCount, int dx, int dy)
@@ -131,15 +131,15 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	/**
 	 * Add a 2D range of slots using the provided factory.
 	 *
-	 * @param container The inventory that the slots are for.
-	 * @param index The slot index that the first created slot should access.
-	 * @param x The X position of the first slot.
-	 * @param y The Y position of the first slot.
+	 * @param container       The inventory that the slots are for.
+	 * @param index           The slot index that the first created slot should access.
+	 * @param x               The X position of the first slot.
+	 * @param y               The Y position of the first slot.
 	 * @param horizontalCount How many slots to create on the horizontal axis.
-	 * @param verticalCount How many slots to create on the vertical axis.
-	 * @param dx The width/gap of each slot, usually 18.
-	 * @param dy The height/gap of each slot, usually 18.
-	 * @param factory The slot factory to use.
+	 * @param verticalCount   How many slots to create on the vertical axis.
+	 * @param dx              The width/gap of each slot, usually 18.
+	 * @param dy              The height/gap of each slot, usually 18.
+	 * @param factory         The slot factory to use.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addSlotBox(Container container, int index, int x, int y, int horizontalCount, int verticalCount, int dx, int dy, SlotFactory factory)
@@ -156,11 +156,11 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	 * Add a range of output-only slots.
 	 *
 	 * @param container The inventory that the slots are for.
-	 * @param index The slot index that the first created slot should access.
-	 * @param x The X position of the first slot.
-	 * @param y The Y position of the first slot.
-	 * @param count How many slots to create.
-	 * @param dx The width/gap of each slot, usually 18.
+	 * @param index     The slot index that the first created slot should access.
+	 * @param x         The X position of the first slot.
+	 * @param y         The Y position of the first slot.
+	 * @param count     How many slots to create.
+	 * @param dx        The width/gap of each slot, usually 18.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addOutputSlotRange(Container container, int index, int x, int y, int count, int dx)
@@ -177,14 +177,14 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	/**
 	 * Add a 2D range of output slots.
 	 *
-	 * @param container The inventory that the slots are for.
-	 * @param index The slot index that the first created slot should access.
-	 * @param x The X position of the first slot.
-	 * @param y The Y position of the first slot.
+	 * @param container       The inventory that the slots are for.
+	 * @param index           The slot index that the first created slot should access.
+	 * @param x               The X position of the first slot.
+	 * @param y               The Y position of the first slot.
 	 * @param horizontalCount How many slots to create on the horizontal axis.
-	 * @param verticalCount How many slots to create on the vertical axis.
-	 * @param dx The width/gap of each slot, usually 18.
-	 * @param dy The height/gap of each slot, usually 18.
+	 * @param verticalCount   How many slots to create on the vertical axis.
+	 * @param dx              The width/gap of each slot, usually 18.
+	 * @param dy              The height/gap of each slot, usually 18.
 	 * @return The slot index of the last slot + 1.
 	 */
 	protected int addOutputSlotBox(Container container, int index, int x, int y, int horizontalCount, int verticalCount, int dx, int dy)
@@ -201,8 +201,8 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 	 * Add slots for a player's inventory (9 slots by 4 slots).
 	 *
 	 * @param playerInventory The player's inventory.
-	 * @param x The X position for the slots.
-	 * @param y The Y position for the slots.
+	 * @param x               The X position for the slots.
+	 * @param y               The Y position for the slots.
 	 */
 	protected void addPlayerInventorySlots(Container playerInventory, int x, int y)
 	{
@@ -232,9 +232,9 @@ public abstract class AbstractLazuliContainer extends AbstractContainerMenu
 		 * Creates a slot using the provided coordinates, index, and container.
 		 *
 		 * @param container The container.
-		 * @param slot The index that this slot is for.
-		 * @param x The X coordinate.
-		 * @param y The Y coordinate.
+		 * @param slot      The index that this slot is for.
+		 * @param x         The X coordinate.
+		 * @param y         The Y coordinate.
 		 * @return A {@link Slot} or child.
 		 */
 		Slot makeSlot(Container container, int slot, int x, int y);

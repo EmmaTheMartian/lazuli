@@ -14,17 +14,22 @@ import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
  */
 public class AbstractSingleTankBE extends BlockEntity implements ISingleTankBE
 {
-	/** The block entity's fluid tank. */
+	/**
+	 * The block entity's fluid tank.
+	 */
 	protected final FluidTank tank;
-	/** The tank's capacity in mB. */
+
+	/**
+	 * The tank's capacity in mB.
+	 */
 	protected final int capacity;
 
 	/**
 	 * A block entity with a single tank.
 	 *
-	 * @param type The block entity's type.
-	 * @param capacity The tank's capacity in mB.
-	 * @param pos The block entity's position.
+	 * @param type       The block entity's type.
+	 * @param capacity   The tank's capacity in mB.
+	 * @param pos        The block entity's position.
 	 * @param blockState The block entity's block state.
 	 */
 	public AbstractSingleTankBE(BlockEntityType<?> type, int capacity, BlockPos pos, BlockState blockState)

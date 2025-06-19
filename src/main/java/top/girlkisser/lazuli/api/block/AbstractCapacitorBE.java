@@ -11,10 +11,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
  * A generic battery block with an inventory to charge items with.
@@ -34,8 +32,8 @@ public abstract class AbstractCapacitorBE extends AbstractEnergyBE implements IT
 	 * A generic battery block with an inventory to charge items with.
 	 *
 	 * @param blockEntityType The block entity's type.
-	 * @param pos The block entity's position.
-	 * @param blockState The block entity's state.
+	 * @param pos             The block entity's position.
+	 * @param blockState      The block entity's state.
 	 */
 	public AbstractCapacitorBE(BlockEntityType<? extends AbstractCapacitorBE> blockEntityType, BlockPos pos, BlockState blockState)
 	{

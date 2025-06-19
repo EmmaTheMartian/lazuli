@@ -18,8 +18,8 @@ public final class Raycasting
 	/**
 	 * Performs a block raycast.
 	 *
-	 * @param entity The entity to raycast from.
-	 * @param reach The maximum distance to check.
+	 * @param entity    The entity to raycast from.
+	 * @param reach     The maximum distance to check.
 	 * @param hitFluids If the raycast should also hit fluids.
 	 * @return The block that the raycast hit, if any.
 	 */
@@ -37,7 +37,7 @@ public final class Raycasting
 	 * Performs an entity raycast.
 	 *
 	 * @param entity The entity to raycast from.
-	 * @param reach The maximum distance to check.
+	 * @param reach  The maximum distance to check.
 	 * @return The entity that the raycast hit, if any.
 	 */
 	public static @Nullable EntityHitResult entityRaycast(Entity entity, double reach)
@@ -53,8 +53,8 @@ public final class Raycasting
 	/**
 	 * Performs a raycast.
 	 *
-	 * @param entity The entity to raycast from.
-	 * @param reach The maximum distance to check.
+	 * @param entity    The entity to raycast from.
+	 * @param reach     The maximum distance to check.
 	 * @param hitFluids If fluids should be hit.
 	 * @return The HitResult.
 	 */
