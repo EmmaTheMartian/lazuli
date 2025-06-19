@@ -1,6 +1,7 @@
 package top.girlkisser.lazuli.api.collections;
 
 import net.minecraft.util.RandomSource;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +51,7 @@ public class WeightedRandomList<T extends WeightedRandomList.IWeighted>
 	 * @param random A random source to use.
 	 * @return The value.
 	 */
-	public T pick(RandomSource random)
+	public @Nullable T pick(RandomSource random)
 	{
 		double r = random.nextInt(accumulatedWeight);
 		for (var entry : entries)

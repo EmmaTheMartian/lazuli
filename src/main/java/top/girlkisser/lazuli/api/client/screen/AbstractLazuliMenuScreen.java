@@ -47,7 +47,7 @@ public abstract class AbstractLazuliMenuScreen<T extends AbstractLazuliContainer
 	protected abstract ResourceLocation getUI();
 
 	@Override
-	public @NotNull T getMenu()
+	public T getMenu()
 	{
 		return menu;
 	}
@@ -61,7 +61,7 @@ public abstract class AbstractLazuliMenuScreen<T extends AbstractLazuliContainer
 	}
 
 	@Override
-	public void renderBackground(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick)
+	public void renderBackground(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick)
 	{
 		super.renderBackground(guiGraphics, mouseX, mouseY, partialTick);
 		renderBg(guiGraphics, partialTick, mouseX, mouseY);
@@ -75,7 +75,7 @@ public abstract class AbstractLazuliMenuScreen<T extends AbstractLazuliContainer
 	 * @param mouseX      The mouse's X position.
 	 * @param mouseY      The mouse's Y position.
 	 */
-	protected void renderBg(@NotNull GuiGraphics graphics, float partialTick, int mouseX, int mouseY)
+	protected void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY)
 	{
 		graphics.blit(getUI(), leftPos, topPos, 0, 0, this.imageWidth, this.imageHeight);
 	}

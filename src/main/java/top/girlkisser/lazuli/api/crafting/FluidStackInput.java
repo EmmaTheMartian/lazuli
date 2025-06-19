@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 public record FluidStackInput(FluidStack fluid) implements RecipeInput
 {
 	@Override
-	public @NotNull ItemStack getItem(int index)
+	public ItemStack getItem(int index)
 	{
 		return ItemStack.EMPTY;
 	}

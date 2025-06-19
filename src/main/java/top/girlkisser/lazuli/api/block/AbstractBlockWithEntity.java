@@ -19,7 +19,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
  *
  * @param <T> The block entity's type
  */
-@ParametersAreNonnullByDefault
 public abstract class AbstractBlockWithEntity<T extends BlockEntity> extends Block implements EntityBlock
 {
 	private final BlockEntityType.BlockEntitySupplier<T> blockEntityFactory;

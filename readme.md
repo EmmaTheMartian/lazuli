@@ -85,6 +85,32 @@ dependencies {
 }
 ```
 
+## Contributors
+
+Notes to contributors:
+
+- This is a personal API first-and-foremost. It's going to be opinionated, and
+  it's going to be catered by my likings.
+- Use a `package-info.java` in every package and add
+  `@ParametersAreNonnullByDefault` and `@MethodsReturnNonnullByDefault` to them.
+  If the package is client-only, use `@OnlyIn(Dist.CLIENT)` too.
+- Before I publish, I will check for warnings from the Java compiler or from
+  Javadoc. There should be *zero* warnings for a published JAR if at all
+  possible.
+- Please follow my code style. You can import [Project.xml](Project.xml) into
+  your IDE to use it automatically. Otherwise, the main points are:
+  - Allman indentation (braces on new lines)
+  - Spaces in between for-loop semicolons (`for (int i = 0 ; i < 10 ; i++)`)
+  - Tabs > spaces. I don't care what your tab width is, so don't try to align
+    based on that.
+- Keep a [changelog](changelog.md) of everything you add/remove/change.
+- Use `@Deprecate`, don't remove things randomly. Breaking changes are beyond
+  infuriating in library mods.
+- **If you use another person's code, CREDIT THEM AND MAKE SURE YOU'RE ALLOWED
+  TO USE THEIR CODE.** If you steal, I will ban you from the repository.
+  [Don't be a jerk](https://github.com/CoFH/ThermalExpansion?tab=readme-ov-file#cofh-dont-be-a-jerk-license-v2).
+- That's about it! TL;DR, follow my general style in the codebase and be kind!
+
 ## Todo
 
 - [ ] Add tests for as much of the API as I can

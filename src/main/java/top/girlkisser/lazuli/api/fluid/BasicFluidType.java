@@ -70,19 +70,19 @@ public class BasicFluidType extends FluidType
 		return new IClientFluidTypeExtensions()
 		{
 			@Override
-			public @NotNull ResourceLocation getStillTexture()
+			public ResourceLocation getStillTexture()
 			{
 				return fluidType.stillTexture;
 			}
 
 			@Override
-			public @NotNull ResourceLocation getFlowingTexture()
+			public ResourceLocation getFlowingTexture()
 			{
 				return fluidType.flowingTexture;
 			}
 
 			@Override
-			public @NotNull ResourceLocation getOverlayTexture()
+			public ResourceLocation getOverlayTexture()
 			{
 				return fluidType.overlayTexture;
 			}
@@ -94,14 +94,12 @@ public class BasicFluidType extends FluidType
 			}
 
 			@Override
-			@ParametersAreNonnullByDefault
-			public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColour)
+			public Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColour)
 			{
 				return fluidType.fogColour;
 			}
 
 			@Override
-			@ParametersAreNonnullByDefault
 			public void modifyFogRender(Camera camera, FogRenderer.FogMode fogMode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape fogShape)
 			{
 				RenderSystem.setShaderFogStart(1f);

@@ -22,7 +22,7 @@ public abstract class AbstractBlockEntityContainer<T extends BlockEntity> extend
 	public final BlockPos pos;
 
 	/** The container block entity. */
-	public final @NotNull T blockEntity;
+	public final T blockEntity;
 
 	/** The container's block. */
 	protected final Block block;

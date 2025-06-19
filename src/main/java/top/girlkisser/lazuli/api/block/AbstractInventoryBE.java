@@ -56,20 +56,20 @@ public abstract class AbstractInventoryBE extends BlockEntity implements IInvent
 	}
 
 	@Override
-	public @NotNull ItemStackHandler getInventory()
+	public ItemStackHandler getInventory()
 	{
 		return inventory;
 	}
 
 	@Override
-	protected void saveAdditional(@NotNull CompoundTag tag, @NotNull HolderLookup.Provider registries)
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.saveAdditional(tag, registries);
 		tag.put("Inventory", inventory.serializeNBT(registries));
 	}
 
 	@Override
-	protected void loadAdditional(@NotNull CompoundTag tag, @NotNull HolderLookup.Provider registries)
+	protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.loadAdditional(tag, registries);
 

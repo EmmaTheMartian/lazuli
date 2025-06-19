@@ -66,7 +66,7 @@ public abstract class AbstractCapacitorBE extends AbstractEnergyBE implements IT
 	}
 
 	@Override
-	public @NotNull ItemStackHandler getInventory()
+	public ItemStackHandler getInventory()
 	{
 		return itemHandler;
 	}
@@ -102,7 +102,6 @@ public abstract class AbstractCapacitorBE extends AbstractEnergyBE implements IT
 	}
 
 	@Override
-	@ParametersAreNonnullByDefault
 	public void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.saveAdditional(tag, registries);
@@ -110,7 +109,6 @@ public abstract class AbstractCapacitorBE extends AbstractEnergyBE implements IT
 	}
 
 	@Override
-	@ParametersAreNonnullByDefault
 	public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.loadAdditional(tag, registries);

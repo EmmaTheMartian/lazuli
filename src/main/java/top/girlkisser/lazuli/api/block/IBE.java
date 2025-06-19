@@ -3,6 +3,7 @@ package top.girlkisser.lazuli.api.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Default methods for a block entity.
@@ -34,7 +35,7 @@ public interface IBE
 	 *
 	 * @return The level.
 	 */
-	Level getLevel();
+	@Nullable Level getLevel();
 
 	/**
 	 * Mark the block entity as having changed.

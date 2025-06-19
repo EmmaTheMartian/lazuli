@@ -15,7 +15,7 @@ public record EntityRecipeInput(EntityType<?> entity) implements RecipeInput
 {
 	@Override
 	@ApiStatus.Obsolete
-	public @NotNull ItemStack getItem(int index)
+	public ItemStack getItem(int index)
 	{
 		return ItemStack.EMPTY;
 	}

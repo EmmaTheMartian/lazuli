@@ -41,7 +41,7 @@ public final class FluidRenderingHelpers
 	 * @param height Height of the "tank" in the GUI.
 	 */
 	@SuppressWarnings("resource")
-	public static void renderFluidGui(FluidStack fluidStack, @NotNull GuiGraphics graphics, int x, int y, int width, int height)
+	public static void renderFluidGui(FluidStack fluidStack, GuiGraphics graphics, int x, int y, int width, int height)
 	{
 		Fluid fluid = fluidStack.getFluid();
 		IClientFluidTypeExtensions clientFluid = IClientFluidTypeExtensions.of(fluid);
@@ -123,7 +123,7 @@ public final class FluidRenderingHelpers
 	 * @param tankWidth Width of the "tank" in the GUI.
 	 * @param tankHeight Height of the "tank" in the GUI.
 	 */
-	public static void renderFluidTankGui(FluidStack fluidStack, int capacity, @NotNull GuiGraphics graphics, int x, int y, int tankWidth, int tankHeight)
+	public static void renderFluidTankGui(FluidStack fluidStack, int capacity, GuiGraphics graphics, int x, int y, int tankWidth, int tankHeight)
 	{
 		int fluidAmount = fluidStack.getAmount();
 		if (fluidAmount > 0)

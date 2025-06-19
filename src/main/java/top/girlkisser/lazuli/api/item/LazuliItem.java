@@ -5,7 +5,10 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidUtil;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStack;
+import org.jetbrains.annotations.Nullable;
 import top.girlkisser.lazuli.common.LazuliDataComponents;
+
+import java.util.Objects;
 
 /**
  * Provides a large handful of generic helpers for items.
@@ -54,7 +57,7 @@ public interface LazuliItem
 	 * @param stack The stack.
 	 * @return The fluid handler.
 	 */
-	default IFluidHandlerItem getFluidHandler(ItemStack stack)
+	default @Nullable IFluidHandlerItem getFluidHandler(ItemStack stack)
 	{
 		if (!hasFluidTank())
 			return null;
@@ -63,27 +66,31 @@ public interface LazuliItem
 
 	/**
 	 * Returns true if the stack has a fluid in its tank.
+	 * <br/>
+	 * **This method will throw an exception if the item does not have a fluid handler.**
 	 *
 	 * @param stack The stack.
 	 * @return Whether the tank contains fluid.
 	 */
 	default boolean hasFluid(ItemStack stack)
 	{
-		return hasFluidTank() && !getFluid(stack).isEmpty();
+		return hasFluidTank() && !Objects.requireNonNull(getFluid(stack)).isEmpty();
 	}
 
 	/**
 	 * Get the {@link FluidStack} contained in the given tank.
+	 * <br/>
+	 * **This method will throw an exception if the item does not have a fluid handler.**
 	 *
 	 * @param stack The stack.
 	 * @param tank The tank's index.
 	 * @return The fluid stack.
 	 */
-	default FluidStack getFluid(ItemStack stack, int tank)
+	default @Nullable FluidStack getFluid(ItemStack stack, int tank)
 	{
 		if (!hasFluidTank())
 			return null;
-		return getFluidHandler(stack).getFluidInTank(tank);
+		return Objects.requireNonNull(getFluidHandler(stack)).getFluidInTank(tank);
 	}
 
 	/**
@@ -92,13 +99,15 @@ public interface LazuliItem
 	 * @param stack The stack.
 	 * @return The fluid stack.
 	 */
-	default FluidStack getFluid(ItemStack stack)
+	default @Nullable FluidStack getFluid(ItemStack stack)
 	{
 		return getFluid(stack, 0);
 	}
 
 	/**
 	 * Get the fluid tank capacity in mB of the given tank.
+	 * <br/>
+	 * **This method will throw an exception if the item does not have a fluid handler.**
 	 *
 	 * @param stack The stack.
 	 * @param tank The tank's index.
@@ -108,7 +117,7 @@ public interface LazuliItem
 	{
 		if (!hasFluidTank())
 			return -1;
-		return getFluidHandler(stack).getTankCapacity(tank);
+		return Objects.requireNonNull(getFluidHandler(stack)).getTankCapacity(tank);
 	}
 
 

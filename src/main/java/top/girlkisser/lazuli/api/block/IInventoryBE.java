@@ -1,6 +1,5 @@
 package top.girlkisser.lazuli.api.block;
 
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
@@ -25,7 +24,6 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.Nullable;
 import top.girlkisser.lazuli.api.collections.ArrayHelpers;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +32,6 @@ import java.util.List;
  *
  * @param <T> The item stack handler (inventory) that the implementing block entity uses.
  */
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & INBTSerializable<CompoundTag>> extends IBE, WorldlyContainer, StackedContentsCompatible
 {
 	/**
@@ -142,7 +138,7 @@ public interface IInventoryBE<T extends IItemHandler & IItemHandlerModifiable & 
 	/**
 	 * Get the item in the given slot index.
 	 *
-	 * @param slot The index to aacces.
+	 * @param slot The index to access.
 	 * @return The item stack contained in the slot.
 	 */
 	default ItemStack getItem(int slot)

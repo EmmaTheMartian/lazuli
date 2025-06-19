@@ -1,14 +1,10 @@
 /**
- * Client helpers, contains:
- * - Particle helpers
- * - 2D particle engine
- * - Screen (GUI) helpers
- * - Fluid rendering utilities
+ * Provides screen (GUI) helpers.
  */
 @OnlyIn(Dist.CLIENT)
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-package top.girlkisser.lazuli.api.client;
+package top.girlkisser.lazuli.api.client.screen;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.neoforged.api.distmarker.Dist;

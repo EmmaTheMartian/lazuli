@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * A block entity with a single tank.
@@ -71,7 +70,7 @@ public class AbstractSingleTankBE extends BlockEntity implements ISingleTankBE
 	}
 
 	@Override
-	protected void saveAdditional(@NotNull CompoundTag tag, @NotNull HolderLookup.Provider registries)
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.saveAdditional(tag, registries);
 		CompoundTag tankTag = new CompoundTag();
@@ -80,7 +79,7 @@ public class AbstractSingleTankBE extends BlockEntity implements ISingleTankBE
 	}
 
 	@Override
-	protected void loadAdditional(@NotNull CompoundTag tag, @NotNull HolderLookup.Provider registries)
+	protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.loadAdditional(tag, registries);
 

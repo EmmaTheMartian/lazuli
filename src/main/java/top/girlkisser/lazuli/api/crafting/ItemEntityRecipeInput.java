@@ -45,14 +45,12 @@ public record ItemEntityRecipeInput(NonNullList<ItemEntity> entities) implements
 	}
 
 	@Override
-	@NotNull
 	public ItemStack getItem(int slot)
 	{
 		return entities.get(slot).getItem();
 	}
 
 	@Override
-	@NotNull
 	public ItemStack removeItem(int slot, int amount)
 	{
 		ItemStack stack = getItem(slot);
@@ -60,7 +58,6 @@ public record ItemEntityRecipeInput(NonNullList<ItemEntity> entities) implements
 	}
 
 	@Override
-	@NotNull
 	public ItemStack removeItemNoUpdate(int slot)
 	{
 		ItemStack stack = getItem(slot).copy();
@@ -76,7 +73,7 @@ public record ItemEntityRecipeInput(NonNullList<ItemEntity> entities) implements
 	}
 
 	@Override
-	public void setItem(int slot, @NotNull ItemStack stack)
+	public void setItem(int slot, ItemStack stack)
 	{
 		this.entities.get(slot).setItem(stack);
 	}
@@ -89,7 +86,7 @@ public record ItemEntityRecipeInput(NonNullList<ItemEntity> entities) implements
 	}
 
 	@Override
-	public boolean stillValid(@NotNull Player player)
+	public boolean stillValid(Player player)
 	{
 		return false;
 	}

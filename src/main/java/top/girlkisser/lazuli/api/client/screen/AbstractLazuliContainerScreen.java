@@ -37,13 +37,13 @@ public abstract class AbstractLazuliContainerScreen<T extends AbstractLazuliCont
 	protected abstract ResourceLocation getUI();
 
 	@Override
-	public void renderBg(@NotNull GuiGraphics graphics, float partialTick, int mouseX, int mouseY)
+	public void renderBg(GuiGraphics graphics, float partialTick, int mouseX, int mouseY)
 	{
 		graphics.blit(getUI(), this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 	}
 
 	@Override
-	public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTick)
+	public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick)
 	{
 		super.render(graphics, mouseX, mouseY, partialTick);
 		this.renderTooltip(graphics, mouseX, mouseY);

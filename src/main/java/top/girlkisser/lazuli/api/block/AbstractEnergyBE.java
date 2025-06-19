@@ -47,14 +47,14 @@ public abstract class AbstractEnergyBE extends BlockEntity implements IEnergyBE
 	}
 
 	@Override
-	protected void saveAdditional(@NotNull CompoundTag tag, @NotNull HolderLookup.Provider registries)
+	protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.saveAdditional(tag, registries);
 		tag.put("Energy", getEnergyStorage().serializeNBT(registries));
 	}
 
 	@Override
-	protected void loadAdditional(@NotNull CompoundTag tag, @NotNull HolderLookup.Provider registries)
+	protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries)
 	{
 		super.loadAdditional(tag, registries);
 		if (tag.contains("Energy"))
