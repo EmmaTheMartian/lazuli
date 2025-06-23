@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "top.girlkisser",
+    "module": "Lazuli",
+    "version": "0.1.0+1.21.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "Lazuli-0.1.0+1.21.1.jar",
+          "url": "Lazuli-0.1.0+1.21.1.jar",
+          "size": 131927,
+          "sha512": "f7a747f807be3bd3eca04a1304aec84f12cbdce3bcfaaf081a1a0a96c1314563ca8b7cf747b3866ba4d0d2859c335f6383ccba30e7ce3dd836c3e865412883c8",
+          "sha256": "acf13d2e8f42a60a90bc440eacdfb888588c18d35c56670ea601f4de2c1f5b2c",
+          "sha1": "c9b228bfef0e17077cdb1a4f9804b63c361e779d",
+          "md5": "d9b60384cd18c6a35e6c37bf4b796c51"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "dev.emi",
+          "module": "emi-neoforge",
+          "version": {
+            "requires": "1.1.18+1.21.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "Lazuli-0.1.0+1.21.1.jar",
+          "url": "Lazuli-0.1.0+1.21.1.jar",
+          "size": 131927,
+          "sha512": "f7a747f807be3bd3eca04a1304aec84f12cbdce3bcfaaf081a1a0a96c1314563ca8b7cf747b3866ba4d0d2859c335f6383ccba30e7ce3dd836c3e865412883c8",
+          "sha256": "acf13d2e8f42a60a90bc440eacdfb888588c18d35c56670ea601f4de2c1f5b2c",
+          "sha1": "c9b228bfef0e17077cdb1a4f9804b63c361e779d",
+          "md5": "d9b60384cd18c6a35e6c37bf4b796c51"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "Lazuli-0.1.0+1.21.1-sources.jar",
+          "url": "Lazuli-0.1.0+1.21.1-sources.jar",
+          "size": 80282,
+          "sha512": "35c249c8283dbd6b0e6d2bf884786967f2414f3f33a3a17e446f2de2d7d482cd9b95e0653b73b97873ad658b330f7c765b0df614c662555fc89af8c5859cc591",
+          "sha256": "c7ea2bf906de8d08f255b927a5cd4bccfc632adbe2d8892ce7f3de344a557593",
+          "sha1": "dbc8243c25c71f9c52c417e1386b21785952193c",
+          "md5": "ce2900ef313dd0e480e2208bcdc79e5f"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "Lazuli-0.1.0+1.21.1-javadoc.jar",
+          "url": "Lazuli-0.1.0+1.21.1-javadoc.jar",
+          "size": 438726,
+          "sha512": "1485834c34cb86fb0a7a2d2642832d8d31a4006e69b00f7df8f09dfa9062e6010db2e866c8f984653804ed9b4564cd4052e47f69166a017305f526b8f6d831eb",
+          "sha256": "88f03f9d7a7c48a13461a616fbd1b70e7db78694bc28a7d86616d41989b735d4",
+          "sha1": "fd0fb32320ae40790c44edb3b3886934c8e6f9e8",
+          "md5": "182f0b65f62ca856940a1d8279649f17"
+        }
+      ]
+    }
+  ]
+}
