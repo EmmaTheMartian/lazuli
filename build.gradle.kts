@@ -100,12 +100,20 @@ tasks.ideaSyncTask.configure {
 
 publishing {
 	publications {
-		register<MavenPublication>("mavenJava") {
+		register<MavenPublication>("gpr") {
 			from(components["java"])
 		}
 	}
+
 	repositories {
 		maven("file://${project.projectDir}/repo")
+
+		maven("https://maven.pkg.github.com/EmmaTheMartian/lazuli") {
+			credentials {
+				username = (project.findProperty("gpr.user") as String?) ?: System.getenv("USERNAME")
+				password = (project.findProperty("gpr.key") as String?) ?: System.getenv("TOKEN")
+			}
+		}
 	}
 }
 
