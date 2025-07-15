@@ -12,7 +12,7 @@ import top.girlkisser.lazuli.common.LazuliDataComponents;
 
 /**
  * Woohoo the Lazuli mod! :3
- * (JavaDoc is making me put a comment here. Please somebody ~~wake me up~~ help)
+ * (JavaDoc is making me put a comment here. Please somebody ~~wake me up (/reference)~~ help)
  */
 @Mod(Lazuli.MODID)
 @ApiStatus.Internal

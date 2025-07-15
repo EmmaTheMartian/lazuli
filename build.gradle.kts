@@ -1,8 +1,12 @@
+import java.nio.charset.StandardCharsets
+
 plugins {
+	id("idea")
 	id("java-library")
 	id("maven-publish")
-	id("idea")
-	id("dev.architectury.loom") version "1.7-SNAPSHOT"
+	id("dev.architectury.loom") version "1.10-SNAPSHOT"
+	id("me.modmuss50.mod-publish-plugin") version "0.8.3"
+	id("co.uzzu.dotenv.gradle") version "4.0.0"
 }
 
 fun prop(key: String) = property(key) as String
@@ -15,19 +19,6 @@ repositories {
 
 	maven("https://maven.neoforged.net")
 	maven("https://maven.parchmentmc.org")
-
-	// EMI
-	maven("https://maven.terraformersmc.com/")
-
-	// Modrinth Maven
-	exclusiveContent {
-		forRepository {
-			maven("https://api.modrinth.com/maven")
-		}
-		filter {
-			includeGroup("maven.modrinth")
-		}
-	}
 }
 
 base {
@@ -49,10 +40,6 @@ loom {
 }
 
 dependencies {
-	// Shorthands for Modrinth maven dependencies
-	fun modrinth(id: String) = "maven.modrinth:$id:${prop("${id.replace('-', '_')}_version")}"
-	fun enabled(id: String) = prop("enable_$id") == "true"
-
 	minecraft("com.mojang:minecraft:${prop("minecraft_version")}")
 
 	@Suppress("UnstableApiUsage")
@@ -62,13 +49,8 @@ dependencies {
 	})
 
 	neoForge("net.neoforged:neoforge:${prop("neo_version")}")
-
-	compileOnly("dev.emi:emi-neoforge:${prop("emi_version")}:api")
-	runtimeOnly("dev.emi:emi-neoforge:${prop("emi_version")}")
 }
 
-// This block of code expands all declared replace properties in the specified resource targets.
-// A missing property will result in an error. Properties are expanded using ${} Groovy notation.
 val replaceProperties = mapOf(
 	"minecraft_version"       to prop("minecraft_version"),
 	"minecraft_version_range" to prop("minecraft_version_range"),
@@ -90,10 +72,7 @@ val generateModMetadata = tasks.register<ProcessResources>("generateModMetadata"
 	into("build/generated/sources/modMetadata")
 }
 
-// Include the output of "generateModMetadata" as an input directory for the build
-// this works with both building through Gradle and the IDE.
 sourceSets.main.get().resources.srcDir(generateModMetadata)
-// To avoid having to run "generateModMetadata" manually, make it run on every project reload
 tasks.ideaSyncTask.configure {
 	dependsOn(generateModMetadata)
 }
@@ -108,6 +87,69 @@ publishing {
 	repositories {
 		maven("file://${project.projectDir}/repo")
 	}
+}
+
+publishMods {
+	type = STABLE
+	modLoaders.add("neoforge")
+
+	file = tasks.remapJar.get().archiveFile
+	additionalFiles.from(tasks.remapSourcesJar.get().archiveFile)
+
+	var changelogText = "# ${prop("version")}\n\n"
+	// Read the latest version from the changelog
+	changelogText += File(rootDir, "changelog.md")
+		.readText(StandardCharsets.UTF_8)
+		.split(Regex("^#(?!#).*$", RegexOption.MULTILINE))[1]
+		.trim()
+	changelog = changelogText
+
+    dryRun = true
+
+	// TODO: Uncomment when I add Lazuli to CurseForge
+//	curseforge {
+//		projectId = ""
+//		projectSlug = "lazuli"
+//		accessToken = env.CURSEFORGE_TOKEN.value
+//		announcementTitle = "Get from CurseForge"
+//
+//		minecraftVersions.add("1.21.1")
+//		javaVersions.add(JavaVersion.VERSION_21)
+//		javaVersions.add(JavaVersion.VERSION_22)
+//		clientRequired = true
+//		serverRequired = true
+//	}
+
+	modrinth {
+		projectId = ""
+		accessToken = env.MODRINTH_TOKEN.value
+		announcementTitle = "Get from Modrinth"
+
+		minecraftVersions.add("1.21.1")
+	}
+
+	github {
+		repository = "emmathemartian/lazuli"
+		// My branches are named by the minecraft version they target
+		commitish = prop("minecraft_version")
+		accessToken = env.GITHUB_TOKEN.value
+		announcementTitle = "Get from GitHub"
+
+		allowEmptyFiles = true
+	}
+
+//	discord {
+//		val avatar = "https://raw.githubusercontent.com/EmmaTheMartian/lazuli/refs/heads/1.21.1/src/main/resources/assets/lazuli/icon.png"
+//
+//		webhookUrl = env.DISCORD_WEBHOOK_URL.value
+//		username = "Lazuli Release Bot"
+//		avatarUrl = avatar
+//
+//		style {
+//			look = "MODERN"
+//			thumbnailUrl = avatar
+//		}
+//	}
 }
 
 // IDEA no longer automatically downloads sources/javadoc jars for dependencies, so we need to explicitly enable the behavior.

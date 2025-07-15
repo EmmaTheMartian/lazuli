@@ -1,7 +1,9 @@
 package top.girlkisser.lazuli.api.inventory;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.ApiStatus;
@@ -54,16 +56,21 @@ public class RoundRobinInventory extends ItemStackHandler
 	 */
 	@Override
 	@ApiStatus.Obsolete
-	public ItemStack insertItem(int ignoredSlot, ItemStack stack, boolean simulate)
+	public ItemStack insertItem(int slot, ItemStack stack, boolean simulate)
 	{
-		// We will be disregarding `slot` here because we want to round-robin
-		// distribute items
-		ItemStack result = super.insertItem(index++, stack, simulate);
-		if (index >= this.getSlots())
+		if (simulate)
 		{
-			index = 0;
+			return super.insertItem(slot, stack, true);
 		}
-		return result;
+		else
+		{
+			ItemStack result = super.insertItem(index++, stack, false);
+			if (index >= this.getSlots())
+			{
+				index = 0;
+			}
+			return result;
+		}
 	}
 
 	/**
@@ -76,5 +83,22 @@ public class RoundRobinInventory extends ItemStackHandler
 	public ItemStack insertItem(ItemStack stack, boolean simulate)
 	{
 		return insertItem(0, stack, simulate);
+	}
+
+	@Override
+	public CompoundTag serializeNBT(HolderLookup.Provider provider)
+	{
+		CompoundTag tag = super.serializeNBT(provider);
+		tag.putInt("Index", index);
+		return tag;
+	}
+
+	@Override
+	public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag)
+	{
+		super.deserializeNBT(provider, tag);
+
+		if (tag.contains("Index"))
+			this.index = tag.getInt("Index");
 	}
 }

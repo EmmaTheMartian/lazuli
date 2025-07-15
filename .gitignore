@@ -120,3 +120,6 @@ runs/
 
 # Local repo
 /repo/
+
+# .env
+.env

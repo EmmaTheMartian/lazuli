@@ -10,7 +10,7 @@ displayName = "${mod_name}"
 # A URL to query for updates for this mod. See the JSON update specification https://docs.neoforge.net/docs/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json"
 displayURL="https://github.com/emmathemartian/lazuli"
-logoFile="icon.png"
+logoFile="assets/${mod_id}/icon.png"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
 

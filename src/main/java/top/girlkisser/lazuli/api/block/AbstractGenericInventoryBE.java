@@ -6,17 +6,24 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.items.ItemStackHandler;
+import net.neoforged.neoforge.common.util.INBTSerializable;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * A generic class for block entities with inventories.
+ * {@link top.girlkisser.lazuli.api.block.AbstractInventoryBE} but allowing for any valid item handler.
+ * {@see BlockItemRouterBE} for an example use-case.
+ * @param <T> The inventory type.
  */
-public abstract class AbstractInventoryBE extends BlockEntity implements IInventoryBE<ItemStackHandler>
+public abstract class AbstractGenericInventoryBE<T extends IItemHandler & IItemHandlerModifiable & INBTSerializable<CompoundTag>>
+	extends BlockEntity
+	implements IInventoryBE<T>
 {
 	/**
 	 * The block entity's inventory.
 	 */
-	protected final ItemStackHandler inventory;
+	protected final T inventory;
 
 	/**
 	 * The amount of slots that the inventory has.
@@ -31,7 +38,7 @@ public abstract class AbstractInventoryBE extends BlockEntity implements IInvent
 	 * @param pos The position of this block entity.
 	 * @param blockState The block state at the given `pos`.
 	 */
-	public AbstractInventoryBE(BlockEntityType<?> type, int slots, BlockPos pos, BlockState blockState)
+	public AbstractGenericInventoryBE(BlockEntityType<?> type, int slots, BlockPos pos, BlockState blockState)
 	{
 		super(type, pos, blockState);
 		this.slots = slots;
@@ -43,20 +50,10 @@ public abstract class AbstractInventoryBE extends BlockEntity implements IInvent
 	 *
 	 * @return Any ItemStackHandler for the inventory.
 	 */
-	protected ItemStackHandler makeItemStackHandler()
-	{
-		return new ItemStackHandler(slots)
-		{
-			@Override
-			public void onContentsChanged(int slot)
-			{
-				AbstractInventoryBE.this.setChanged();
-			}
-		};
-	}
+	protected abstract T makeItemStackHandler();
 
 	@Override
-	public ItemStackHandler getInventory()
+	public T getInventory()
 	{
 		return inventory;
 	}
